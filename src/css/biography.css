@@ -1,0 +1,10 @@
+#biographyContainer {
+    left: 0;
+    width: 0;
+    height: 100vh;
+}
+
+#returnBio {
+    width: 0%;
+    height: 10%;
+}

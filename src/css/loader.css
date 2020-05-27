@@ -1,0 +1,12 @@
+#loaderContainer {
+    text-align: center;
+    padding: 38vh 0;
+}
+
+@media (max-width : 900px) {
+
+    #loaderContainer {
+        padding: 32vh 0;
+    }
+    
+}
