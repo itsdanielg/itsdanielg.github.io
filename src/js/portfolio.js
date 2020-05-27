@@ -5,9 +5,9 @@ import ttoacImage from "../images/ttoac.png";
 import '../css/portfolio.css';
 
 const gitHubOrgan = "https://github.com/itsdanielg/Virtual-Organ-Project/releases/";
-const projectOrgan = process.env.PUBLIC_URL + "portfolio/Boardwalk_Hall_Auditorium_Organ/";
+const projectOrgan = "https://boardwalk-hall-organ.firebaseapp.com/";
 const gitHubSpeedBot = "https://github.com/itsdanielg/CSE-381-Group-Project/releases";
-const projectSpeedBot = process.env.PUBLIC_URL + "portfolio/SpeedBot/";
+const projectSpeedBot = "https://speed-bot.firebaseapp.com/";
 const gitHubTTOAC = "https://github.com/itsdanielg/CSE-380-Group-Project";
 const projectTTOAC = "http://the-tail-of-a-city.firebaseapp.com/";
 const profMcKenna = "https://www3.cs.stonybrook.edu/~richard/";
