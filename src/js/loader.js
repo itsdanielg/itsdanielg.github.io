@@ -1,5 +1,4 @@
 import React from 'react';
-import Lottie from 'react-lottie';
 import animationData from  '../json/loading.json';
 import '../css/loader.css';
 
@@ -30,11 +29,6 @@ function Loader(doneLoading) {
 
     return (
         <div id="loaderContainer">
-            <Lottie
-                options={defaultOptions}
-                height={'20vh'}
-                width={'20vh'}
-            />
         </div>
     );
 

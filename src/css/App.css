@@ -1,76 +1,74 @@
 .App {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
-    color: #e6e6e6;
-    text-align: center;
+    color: var(--white);
 }
 
-.pageContainer {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    background-color: #e6e6e6;
-    overflow: hidden;
-    transition: 0.7s;
-}
-
-.pageWrapper {
+.page-container {
     overflow-y: auto;
-    height: 100%;
 }
 
-.divBack {
-    position: relative;
-    width: 100%;
-    height: 30vh;
-    background-color: #282c34;
-    text-align: right;
-    padding: 14vh 14vw;
-}
-
-.divBack::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 150%;
-    background: inherit;
-    top: 0;
-    right: 0;
-    transform-origin: top-left;
-    transform: skewY(3deg);
-}
-
-.titleHeading {
-    position: relative;
-    z-index: 1;
-    pointer-events: none;
-    font-size: 6vw;
-    text-shadow: 5px 5px 5px #000000;
-}
-
-.pageContent {
-    color: black;
+.page-header {
     margin: 0 20%;
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+    text-align: right;
 }
 
-.contentTitle {
-    margin-top: 20vh;
-    text-align: left;
+.title-heading {
+    pointer-events: none;
+    font-size: 3rem;
 }
 
-.return {
-    position: fixed;
-    z-index: 2;
-    background-color: #e6e6e65b;
-    transition: 0.7s;
+.page-body {
+    margin: 0 20%;
+    margin-top: 3%;
 }
 
-.return:hover {
-    background-color: #e6e6e6;
+.description {
+    margin: 3% 0;
 }
 
-.preview {
-    margin-top: 25%;
-    font-size: 1.5vw;
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        margin: 0;
+        margin-bottom: 2rem;
+        padding: 2.5rem 0;
+        width: 100%;
+        background: rgba(100, 100, 100, 0.8);
+        pointer-events: none;
+    }
+    
+    .title-heading {
+        pointer-events: none;
+        font-size: 2em;
+    }
+
+    .title-underline {
+        width: 20%;
+        height: 4px;
+        margin-top: 0.5em;
+        background: var(--white);
+        border-radius: 8px;
+    }
+    
+    .page-body {
+        margin: 0 7%;
+        font-size: 16px;
+    }
+
+    .description {
+        margin: 5% 0;
+    }
+
 }

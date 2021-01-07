@@ -1,183 +1,133 @@
-.homeContainer {
-    display:flex;
-    align-content: center;
-    overflow: hidden;
-    animation-name: homeAnimation;
-    animation-duration: 4s;
-}
-
-.headerContainer {
+.home-container {
     position: fixed;
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    padding: 2% 5%;
-    border-radius: 3em;
-    pointer-events: none;
-    text-align: center;
-    font-style: italic;
-    letter-spacing: 0.2vw;
-    text-shadow: 5px 5px 5px #000000;
-    animation-name: headerAnimation;
-    animation-duration: 4s;
-}
-
-.headerContainer h1 {
-    font-size: 4vw;
-}
-
-.headerContainer h2 {
-    font-size: 2vw;
-}
-
-.imageContainer {
-    position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     height: 100vh;
-    overflow: hidden;
-    border: 3px solid black;
+    width: 100%;
 }
 
-.imageContainer img {
+.header-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    transform: translateX(5vw);
+}
+
+.text-container {
+    /* margin-bottom: 18vh; */
+    text-align: center;
+}
+
+.text-container h1 {
+    font-size: 3.8em;
+}
+
+.text-container h2 {
+    font-size: 1.1em;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3em;
+    width: 100%;
+}
+
+.home-button {
+    width: 35%;
+    height: 2.5rem;
+    border-radius: 10px;
+    border: solid 3px var(--black);
+    outline: none;
+    background: var(--red);
+    color: var(--white);
+    text-align: center;
+    font-size: 0.8em;
+    transition: var(--buttonTransitionPreset);
+}
+
+.home-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 35rem;
+    height: 35rem;
+    transform: translateX(3vw);
+}
+
+.home-image-container img {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: auto;
-    filter: blur(6px);
-    webkit-filter: blur(6px);
-    transition: 0.3s;
+    transform: scale(1.0);
+    transition: var(--transitionPreset);
 }
 
-.imageContainer:hover img {
-    filter: blur(0px);
-    webkit-filter: blur(0px);
-    transform: scale(1.15);
-}
+@media only screen and (min-width: 600px) {
 
-#imageHobbies img {
-    width: auto;
-    height: 100%;
-    left: -45%;
-}
+    /* Hover effects only on desktop */
 
-.labelContainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.5);
-    transition: 0.3s;
-}
-
-.labelContainer:hover {
-    background-color: rgb(0, 0, 0, 0.0);
-}
-
-.label {
-    position: absolute;
-    width: 80%;
-    height: auto;
-    margin: auto;
-    padding: 2vh 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.85);
-    border-radius: 2vw;
-    font-size: 2.5vw;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 0;
-    color: #e6e6e6;
-}
-
-.labelContainer:hover .label {
-    opacity: 1;
-}
-
-.label:hover {
-    color: rgb(255, 239, 65);
-}
-
-/* ANIMATIONS */
-
-#imageBio {
-    animation-name: imageBioMove;
-    animation-duration: 4s;
-}
-
-#imagePortfolio {
-    animation-name: imagePortfolioMove;
-    animation-duration: 4s;
-}
-
-#imageHobbies {
-    animation-name: imageHobbiesMove;
-    animation-duration: 4s;
-}
-
-@keyframes imageBioMove {
-    0% {
-        left: 100vw;
-        opacity: 0;
+    .home-button:hover {
+        background: var(--redHover);
+        cursor: pointer;
+        transition: var(--buttonTransitionPreset);
     }
-    40% {
-        left:0;
-        opacity: 1;
+
+    .home-image-container:hover img {
+        transform: scale(1.05);
+        transition: var(--transitionPreset);
     }
+
 }
 
-@keyframes imagePortfolioMove {
-    0% {
-        left: 100vw;
-        opacity: 0;
-    }
-    20% {
-        left: 100vw;
-        opacity: 0;
-    }
-    60% {
-        left:0;
-        opacity: 1;
-    }
-}
+@media only screen and (max-width: 600px) {
 
-@keyframes imageHobbiesMove {
-    0% {
-        left: 100vw;
-        opacity: 0;
+    .home-container {
+        flex-direction: column;
+        justify-content: space-around;
+        height: calc(var(--vh, 1vh) * 100);
     }
-    40% {
-        left: 100vw;
-        opacity: 0;
+    
+    .header-container {
+        transform: translateX(0vw);
     }
-    80% {
-        left:0;
-        opacity: 1;
+    
+    .text-container {
+        margin-bottom: 0vh;
+        width: 100%;
     }
-}
+    
+    .text-container h1 {
+        margin: 0.5em;
+        height: 2.5em;
+        border-radius: 5px;
+        background: rgba(100, 100, 100, 0.8);
+        font-size: 2.2em;
+        line-height: 1.2em;
+    }
+    
+    .text-container h2 {
+        margin-top: -0.8em;
+        font-size: 0.6em;
+    }
+    
+    .button-container {
+        margin-top: 0em;
+        margin: 1em 0;
+    }
+    
+    .home-image-container {
+        width: 20rem;
+        height: 20rem;
+        transform: translateX(0vw);
+    }
 
-@keyframes headerAnimation {
-    0% {
-        bottom: -3vh;
-        opacity: 0;
-    }
-    80% {
-        bottom: -3vh;
-        opacity: 0;
-    }
-    100% {
-        bottom: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes homeAnimation {
-    0% {
-        pointer-events: none;
-    }
-    100% {
-        pointer-events: auto;
-    }
 }

@@ -1,111 +1,143 @@
-import React from 'react';
-import organImage from "../images/organ.jpg";
-import speedBotImage from "../images/speedbot.jpg";
-import ttoacImage from "../images/ttoac.png";
+import React, { useEffect, useState } from 'react';
+// import {motion} from 'framer-motion';
+import descriptions from "../json/descriptions.json";
 import '../css/portfolio.css';
 
-const gitHubOrgan = "https://github.com/itsdanielg/Virtual-Organ-Project/releases/";
-const projectOrgan = "https://boardwalk-hall-organ.firebaseapp.com/";
-const gitHubSpeedBot = "https://github.com/itsdanielg/CSE-381-Group-Project/releases";
-const projectSpeedBot = "https://speed-bot.firebaseapp.com/";
-const gitHubTTOAC = "https://github.com/itsdanielg/CSE-380-Group-Project";
-const projectTTOAC = "http://the-tail-of-a-city.firebaseapp.com/";
-const profMcKenna = "https://www3.cs.stonybrook.edu/~richard/";
+// const profMcKenna = "https://www3.cs.stonybrook.edu/~richard/";
 
-function Portfolio(props) {
+function Portfolio() {
+
+    var [filters, setFilters] = useState(() => {
+        return [];
+    });
+
+    var addFilter = (innerHTML) => {
+        setFilters(prevFilters => [...prevFilters, (innerHTML)]);
+    }
+
+    var removeFilter = (innerHTML) => {
+        var newFilters = filters.filter((filter) => filter !== innerHTML);
+        setFilters(newFilters);
+    }
+
+    var filterNav = (e) => {
+        var div = e.currentTarget;
+        if (div.className === "filter-nav-tag-selected") {
+            div.className = "filter-nav-tag";
+            removeFilter(div.innerHTML);
+        }
+        else {
+            div.className = "filter-nav-tag-selected";
+            addFilter(div.innerHTML);
+        }
+    }
+
+    var filterProject = (tags) => {
+        if (tags.length === 0) return false;
+        for (var filter of filters) {
+            if (!tags.includes(filter)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    var descriptionOnClick = (e) => {
+        if (e.target.nodeName !== "H2") return;
+        var div = e.currentTarget;
+        var description = div.children[1];
+        if (description.className === "project-description-open") {
+            description.className = "project-description";
+        }
+        else {
+            description.className = "project-description-open";
+        }
+    }
+
+    var addProject = (index) => {
+        var project = descriptions.portfolio[index];
+        var tags = project.tags;
+        if (filterProject(tags)) return;
+        var heading = project.heading;
+        var description = project.description;
+        var image = project.image;
+        var preview = project.preview;
+        var github = project.github;
+        var demo = project.demo;
+        var section = 
+            <div className="project-container">
+                <div className="project-image" >
+                    <img src={image} alt={heading}></img>
+                    <div className="project-image-hover">
+                        <video autoPlay="autoplay">
+                            <source src={preview} type="video/avi"/>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div className="project-info" onClick={descriptionOnClick}>
+                    <h2>{heading}</h2>
+                    <div className="project-description">
+                        <p>{description}</p>
+                        <div className="links-container">
+                            <a href={github} target="_blank" rel="noopener noreferrer">
+                                <div className="link-div">
+                                    <h3>View Github</h3>
+                                </div>
+                            </a>
+                            <a href={demo} target="_blank" rel="noopener noreferrer">
+                                <div className="link-div">
+                                    <h3>View Demo</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>;
+        return section;
+    }
 
     return (
-
-        <div className="pageContainer" id="portfolioContainer">
-            
-            <div className="return" id="returnPortfolio" onClick={props.closePage}>
-                
+        <div className="page-container">
+            <div className="page-header">
+                <h1 className="title-heading">PORTFOLIO</h1>
+                <div className='title-underline'></div>
             </div>
-            <div className="pageWrapper">
-                
-                <div className="divBack">
-                    <h1 className="titleHeading">Portfolio</h1>
-                </div>
-                <div className="pageContent" id="portfolioContent">
-                    <div className="contentTitle">
-                        <h1>University</h1>
+            <div className="page-body">
+                <div className="filter-nav">
+                    <div className="filter-nav-row">
+                        <div className="filter-nav-tag" onClick={filterNav}>Java</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>Python</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>C#</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>C</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>C++</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>JavaScript</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>HTML / CSS</div>
                     </div>
-                    <div className="portfolioContentSection">
-                        <div className="sectionInfo">
-                            <h2>Boardwalk Hall Auditorium Organ</h2>
-                            <p>
-                                A 3D-Simulator of a pipe organ based on the real life instrument found in the Boardwalk Hall Auditorium located in Atlantic City, NJ. This was created using Unity as a research project under Professor <a href={profMcKenna} target="_blank">
-                                Richard McKenna</a> in Stony Brook University during the Spring 2020 semester. The organ consists of 7 rows of playable keys that can only be played on certain sections at a time. An option to play one song can also be accessed as a mini-game.
-                            </p>
-                        </div>
-                        <div className="sectionImage" >
-                            <img src={organImage} alt="Boardwalk Hall Auditorium Organ"></img>
-                            <div className="imageHoverDiv">
-                                <a href={gitHubOrgan} target="_blank">
-                                    <div className="linkDiv">
-                                        <h2>Play as .exe</h2>
-                                    </div>
-                                </a>
-                                <a href={projectOrgan} target="_blank">
-                                    <div className="linkDiv">
-                                        <h2>Play as WebGL</h2>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="filter-nav-row">
+                        <div className="filter-nav-tag" onClick={filterNav}>React</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>Node.js</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>Unity</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>Blender</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>Phaser</div>
                     </div>
-                    <div className="portfolioContentSection">
-                        <div className="sectionInfo">
-                            <h2>SpeedBot</h2>
-                            <p>
-                                A 3D-Platform game created as the final group project for the Advanced Game Programming course in Stony Brook University during the Fall 2019 semester. This game was created using Unity and Blender, and can be played as an executable or through WebGL online. The objective of the game is to reach the endpoint of each level as fast as possible as you play a robot that is trying to escape a dystopian city ruled by a corrupt leader.
-                            </p>
-                        </div>
-                        <div className="sectionImage" >
-                            <img src={speedBotImage} alt="SpeedBot"></img>
-                            <div className="imageHoverDiv">
-                                <a href={gitHubSpeedBot} target="_blank">
-                                    <div className="linkDiv">
-                                        <h2>Play as .exe</h2>
-                                    </div>
-                                </a>
-                                <a href={projectSpeedBot} target="_blank">
-                                    <div className="linkDiv">
-                                        <h2>Play as WebGL</h2>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="portfolioContentSection">
-                        <div className="sectionInfo">
-                            <h2>The Tail of a City</h2>
-                            <p>
-                                A 2D-Adventure game created as the final group project for the Beginner Game Programming course in Stony Brook University during the Spring 2019 semester. This game was created using Phaser, a 2D game framework that utilizes JavaScript and WebGL, and can be played online. The objective of the game is to complete certain quests in each level as a playable dog, where quests are dependent on your in-game reputation and experience.
-                            </p>
-                        </div>
-                        <div className="sectionImage">
-                            <img src={ttoacImage} alt="The Tail of a City"></img>
-                            <div className="imageHoverDiv">
-                                <a href={gitHubTTOAC} target="_blank">
-                                    <div className="linkDiv">
-                                        <h2>View Source</h2>
-                                    </div>
-                                </a>
-                                <a href={projectTTOAC} target="_blank">
-                                    <div className="linkDiv">
-                                        <h2>Play as WebGL</h2>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="filter-nav-row">
+                        <div className="filter-nav-tag" onClick={filterNav}>Personal</div>
+                        <div className="filter-nav-tag" onClick={filterNav}>University</div>
                     </div>
                 </div>
-
+                <div className="page-content-flex">
+                    <div className="page-content-title">
+                        <h1>Filter projects by language / framework / etc...</h1>
+                    </div>
+                    <div className="page-content-projects">
+                        {addProject(0)}
+                        {addProject(1)}
+                        {addProject(2)}
+                    </div>
+                </div>
             </div>
-            
         </div>
-        
     );
 
 }
