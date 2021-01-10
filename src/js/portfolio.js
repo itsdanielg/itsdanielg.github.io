@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState, useEffect} from 'react';
 // import {motion} from 'framer-motion';
 import descriptions from "../json/descriptions.json";
 import '../css/portfolio.css';
@@ -10,6 +10,24 @@ function Portfolio() {
     var [filters, setFilters] = useState(() => {
         return [];
     });
+
+    var filterOpen = true;
+
+    var openFilter = (e) => {
+        filterOpen = !filterOpen;
+        if (window.matchMedia("only screen and (max-width: 600px)")) {
+            var div = e.currentTarget;
+            var filterNav = document.getElementById("filterNavID");
+            if (!filterOpen) {
+                div.innerHTML = "Tap to view filters...";
+                filterNav.style.display = "none";
+            }
+            else {
+                div.innerHTML = "Tap to hide filters...";
+                filterNav.style.display = "flex";
+            }
+        }
+    }
 
     var addFilter = (innerHTML) => {
         setFilters(prevFilters => [...prevFilters, (innerHTML)]);
@@ -97,6 +115,10 @@ function Portfolio() {
         return section;
     }
 
+    useEffect(() => {
+        filterOpen = false;
+    }, []);
+
     return (
         <div className="page-container">
             <div className="page-header">
@@ -104,7 +126,8 @@ function Portfolio() {
                 <div className='title-underline'></div>
             </div>
             <div className="page-body">
-                <div className="filter-nav">
+            <div className="filter-nav-dropdown" onClick={openFilter}>Tap to view filters...</div>
+                <div className="filter-nav" id="filterNavID">
                     <div className="filter-nav-row">
                         <div className="filter-nav-tag" onClick={filterNav}>Java</div>
                         <div className="filter-nav-tag" onClick={filterNav}>Python</div>
