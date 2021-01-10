@@ -20,7 +20,7 @@ function Contact() {
                 <h1 className="title-heading">CONTACT</h1>
                 <div className='title-underline'></div>
             </div>
-            <div className="page-body">
+            <div className="page-body" id="contentBody">
                 <p>{learnMoreDescription}</p>
                 <form className="contact-form">
                     <input className="contact-input" id="contact-input-name" type="text" placeholder="Full Name" name="name"></input>

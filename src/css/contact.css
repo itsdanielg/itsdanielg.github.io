@@ -64,3 +64,27 @@ textarea {
     }
 
 }
+
+@media only screen and (max-width: 600px) {
+
+    #contentBody p {
+        text-align: center;
+    }
+    
+    #contact-input-name {
+        width: 100%;
+    }
+    
+    #contact-input-email {
+        width: 100%;
+    }
+    
+    #contact-input-message {
+        height: 10rem;
+    }
+    
+    .contact-submit {
+        width: 40%;
+    }
+
+}
