@@ -1,8 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 // import {AnimatePresence, motion} from 'framer-motion'
-// import Loader from './loader';
-// import Preloader from './preloader';
+import Preloader from './preloader';
 import NavBar from './navbar';
 import ParticlesBG from './particles';
 import Home from './home';
@@ -15,7 +14,7 @@ function App() {
 
     return (
         <div className="App">
-            {/* <Preloader doneLoading={doneLoading}/> */}
+            <Preloader/>
             <NavBar/>
             <ParticlesBG/>
             <Switch>
