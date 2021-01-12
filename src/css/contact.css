@@ -4,9 +4,9 @@ input {
 }
 
 textarea {
-    -webkit-appearance: none;
     border: none;
     outline: none;
+    -webkit-appearance: none;
 }
 
 .contact-form {

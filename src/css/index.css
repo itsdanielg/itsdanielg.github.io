@@ -9,7 +9,6 @@
     --redHover: rgb(179, 76, 76);
     --orange: rgb(212, 143, 16);
     --white: rgb(218, 218, 218);
-
     --transitionPreset: all 0.3s ease-in-out;
     --buttonTransitionPreset: all 0.2s ease-in-out;
 }
@@ -35,6 +34,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 0.2em;
+    opacity: 0;
 }
   
 ::-webkit-scrollbar-thumb {
@@ -44,3 +44,47 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #888;
 }
+
+/* Template {
+    content:
+
+    position:
+    z-index:
+    top, bottom, left, right: (rem, %, vw, vh)
+
+    box-sizing:
+    display:
+    flex-directon:
+    overflow:
+    margin: (rem, %, vw, vh)
+    padding: (rem, %, vw, vh)
+    width: (rem, %, vw, vh)
+    height: (rem, %, vw, vh)
+    border:
+    border-radius: (rem)
+    outline:
+
+    background:
+    background-color:
+    color:
+    opacity:
+
+    font-family:
+    font-size: (em)
+    font-weight:
+    font-style:
+    letter-spacing: (em)
+    line-height: (em)
+    text-align:
+    text-shadow:
+    text-decoration:
+
+    cursor:
+    pointer-events:
+
+    transform:
+    transform-origin:
+    transition:
+    transition-delay:
+    animation:
+} */
