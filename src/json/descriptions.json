@@ -44,6 +44,7 @@
     ],
     "contact":
     {
-        "description": "Get in Touch!"
+        "heading": "Let's get in touch!",
+        "description": "Have a question, want to collaborate on a project, or just want to say hello? Check my social links below or feel free to send me a message!"
     }
 }
