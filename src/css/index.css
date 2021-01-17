@@ -32,6 +32,21 @@ body {
     -moz-osx-font-smoothing: antialiased;
 }
 
+a {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
 ::-webkit-scrollbar {
     width: 0.2em;
     opacity: 0;

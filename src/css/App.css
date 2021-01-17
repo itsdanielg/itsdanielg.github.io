@@ -22,16 +22,13 @@
 }
 
 .page-body {
+    position: relative;
     margin: 0 20%;
     margin-top: 3%;
 }
 
 .description {
     margin: 3% 0;
-}
-
-a {
-    text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
