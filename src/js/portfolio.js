@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 // import {motion} from 'framer-motion';
 import descriptions from "../json/descriptions.json";
 import '../css/portfolio.css';
@@ -11,14 +11,18 @@ function Portfolio() {
         return [];
     });
 
-    var filterOpen = true;
+    var [projects, setProjects] = useState(() => {
+        return descriptions.portfolio;
+    });
+
+    const filterOpen = useRef(false);
 
     var openFilter = (e) => {
-        filterOpen = !filterOpen;
+        filterOpen.current = !filterOpen.current;
         if (window.matchMedia("only screen and (max-width: 600px)")) {
             var div = e.currentTarget;
             var filterNav = document.getElementById("filterNavID");
-            if (!filterOpen) {
+            if (!filterOpen.current) {
                 div.innerHTML = "Tap to view filters...";
                 filterNav.style.display = "none";
             }
@@ -27,15 +31,6 @@ function Portfolio() {
                 filterNav.style.display = "flex";
             }
         }
-    }
-
-    var addFilter = (innerHTML) => {
-        setFilters(prevFilters => [...prevFilters, (innerHTML)]);
-    }
-
-    var removeFilter = (innerHTML) => {
-        var newFilters = filters.filter((filter) => filter !== innerHTML);
-        setFilters(newFilters);
     }
 
     var filterNav = (e) => {
@@ -50,14 +45,29 @@ function Portfolio() {
         }
     }
 
-    var filterProject = (tags) => {
-        if (tags.length === 0) return false;
-        for (var filter of filters) {
-            if (!tags.includes(filter)) {
-                return true;
-            }
+    var addFilter = (innerHTML) => {
+        setFilters(prevFilters => [...prevFilters, (innerHTML)]);
+    }
+
+    var removeFilter = (innerHTML) => {
+        var newFilters = filters.filter((filter) => filter !== innerHTML);
+        setFilters(newFilters);
+    }
+
+    const filterProjects = () => {
+        if (filters.length === 0) {
+            setProjects(descriptions.portfolio);
         }
-        return false;
+        else {
+            const projectsCopy = [];
+            for (var project of descriptions.portfolio) {
+                let projectTags = project.tags;
+                if (filters.every(filter => projectTags.includes(filter))) {
+                    projectsCopy.push(project);
+                }
+            }
+            setProjects(projectsCopy);
+        }
     }
 
     var descriptionOnClick = (e) => {
@@ -72,52 +82,9 @@ function Portfolio() {
         }
     }
 
-    var addProject = (index) => {
-        var project = descriptions.portfolio[index];
-        var tags = project.tags;
-        if (filterProject(tags)) return;
-        var heading = project.heading;
-        var description = project.description;
-        var image = project.image;
-        var preview = project.preview;
-        var github = project.github;
-        var demo = project.demo;
-        var section = 
-            <div className="project-container">
-                <div className="project-image" >
-                    <img src={image} alt={heading}></img>
-                    <div className="project-image-hover">
-                        <video autoPlay="autoplay">
-                            <source src={preview} type="video/avi"/>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div className="project-info" onClick={descriptionOnClick}>
-                    <h2>{heading}</h2>
-                    <div className="project-description">
-                        <p>{description}</p>
-                        <div className="links-container">
-                            <a href={github} target="_blank" rel="noopener noreferrer">
-                                <div className="link-div">
-                                    <h3>View Github</h3>
-                                </div>
-                            </a>
-                            <a href={demo} target="_blank" rel="noopener noreferrer">
-                                <div className="link-div">
-                                    <h3>View Demo</h3>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>;
-        return section;
-    }
-
     useEffect(() => {
-        filterOpen = false;
-    }, []);
+        filterProjects();
+    }, [filters])
 
     return (
         <div className="page-container">
@@ -154,9 +121,39 @@ function Portfolio() {
                         <h1>Filter projects by language / framework / etc...</h1>
                     </div>
                     <div className="page-content-projects">
-                        {addProject(0)}
-                        {addProject(1)}
-                        {addProject(2)}
+                        {projects.map((project, index) => {
+                            return (
+                                <div key={index} className="project-container">
+                                    <div className="project-image" >
+                                        <img src={project.image} alt={project.heading}></img>
+                                        {/* <div className="project-image-hover">
+                                            <video autoPlay="autoplay">
+                                                <source src={preview} type="video/avi"/>
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div> */}
+                                    </div>
+                                    <div className="project-info" onClick={descriptionOnClick}>
+                                        <h2>{project.heading}</h2>
+                                        <div className="project-description">
+                                            <p>{project.description}</p>
+                                            <div className="links-container">
+                                                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                    <div className="link-div">
+                                                        <h3>View Github</h3>
+                                                    </div>
+                                                </a>
+                                                <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                                                    <div className="link-div">
+                                                        <h3>View Demo</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>

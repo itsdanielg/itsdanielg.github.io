@@ -1,31 +1,31 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import '../css/preloader.css';
 
 function Preloader() {
-
-    var timer;
-    var progress = 10;
-
-    // Loading transition ends on 5
-    var transitionEndCounter = 0;
 
     const [progressState, setProgressState] = useState(() => {
         return "start";
     })
 
+    const timer = useRef();
+    const progress = useRef(10);
+
+    // Loading transition ends on 5
+    const transitionEndTime = useRef(0);
+
     const changeProgress = () => {
-        progress++;
+        progress.current++;
         var progressBar = document.getElementById("progressBarProgress");
-        progressBar.style.width = `${progress}%`;
-        if (progress >= 100) {
-            clearInterval(timer);
+        progressBar.style.width = `${progress.current}%`;
+        if (progress.current >= 100) {
+            clearInterval(timer.current);
             setProgressState("end");
         }
     }
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
-        timer = setInterval(changeProgress, 25);
+        timer.current = setInterval(changeProgress, 25);
     }, []);
 
     useEffect(() => {
@@ -37,8 +37,8 @@ function Preloader() {
             progressBar.className = "preloader-bar-complete";
             container.className = "preloader-container-complete";
             container.ontransitionend = () => {
-                transitionEndCounter++;
-                if (transitionEndCounter === 5) {
+                transitionEndTime.current++;
+                if (transitionEndTime.current === 5) {
                     console.log('Transition ended');
                     document.body.style.overflow = "auto";
                 }

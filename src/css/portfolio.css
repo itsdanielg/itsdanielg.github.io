@@ -95,7 +95,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: auto;
+    height: 13rem;
     /* background-color: #282c34; */
     background: var(--red);
 }
@@ -104,6 +104,8 @@
     display: block;
     width: 100%;
     height: auto;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .project-image-hover {
@@ -248,6 +250,10 @@
         background: var(--white);
         color: var(--black);
         text-align: center;        
+    }
+
+    .project-image {
+        height: 9rem;
     }
 
 }

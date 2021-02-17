@@ -86,7 +86,7 @@
     text-shadow: 2px 2px #000000;
 }
 
-.skillbars {
+.skill-bars {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -108,7 +108,7 @@
     pointer-events: none;
 }
 
-.skillName {
+.skill-name {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -120,7 +120,7 @@
     text-align: right;
 }
 
-.skillPercentage {
+.skill-percentage {
     height: 100%;
     background-color: var(--redHover);
     text-align: right;
@@ -180,7 +180,7 @@
         text-shadow: 1px 1px #000000;
     }
     
-    .skillbars {
+    .skill-bars {
         margin-top: 1rem;
         width: 100%;
     }

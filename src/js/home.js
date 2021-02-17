@@ -1,6 +1,6 @@
 import React from 'react';
 // import {motion} from 'framer-motion';
-// import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";=
 import '../css/home.css';
 
 const homeImage = "/images/home.png";
@@ -24,7 +24,7 @@ function Home() {
                 </div>
             </div>
             <div className="home-image-container">
-                <img src={homeImage} alt="Background"></img>
+                <img src={homeImage} alt="home-image"></img>
             </div>
         </div>
     );
