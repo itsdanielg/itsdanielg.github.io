@@ -54,22 +54,6 @@ function Portfolio() {
         setFilters(newFilters);
     }
 
-    const filterProjects = () => {
-        if (filters.length === 0) {
-            setProjects(descriptions.portfolio);
-        }
-        else {
-            const projectsCopy = [];
-            for (var project of descriptions.portfolio) {
-                let projectTags = project.tags;
-                if (filters.every(filter => projectTags.includes(filter))) {
-                    projectsCopy.push(project);
-                }
-            }
-            setProjects(projectsCopy);
-        }
-    }
-
     var descriptionOnClick = (e) => {
         if (e.target.nodeName !== "H2") return;
         var div = e.currentTarget;
@@ -83,7 +67,20 @@ function Portfolio() {
     }
 
     useEffect(() => {
-        filterProjects();
+        // Filter Projects
+        if (filters.length === 0) {
+            setProjects(descriptions.portfolio);
+        }
+        else {
+            const projectsCopy = [];
+            for (var project of descriptions.portfolio) {
+                let projectTags = project.tags;
+                if (filters.every(filter => projectTags.includes(filter))) {
+                    projectsCopy.push(project);
+                }
+            }
+            setProjects(projectsCopy);
+        }
     }, [filters])
 
     return (

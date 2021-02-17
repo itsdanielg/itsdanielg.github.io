@@ -11,7 +11,7 @@ const seawolfImage = "/images/seawolf.png";
 
 function Biography() {
 
-    const [skills, setSkills] = useState(() => {
+    const [skills] = useState(() => {
         return biography.skills;
     })
 
@@ -21,7 +21,7 @@ function Biography() {
             let skillPercentageWidth = skills[i].percentage * 0.8;
             skillPercentages[i].style.width = `${skillPercentageWidth}%`;
         }
-    },[])
+    })
 
     return (
         <div className="page-container">

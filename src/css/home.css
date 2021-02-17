@@ -41,7 +41,7 @@
 }
 
 .home-button {
-    width: 35%;
+    width: 10rem;
     height: 2.5rem;
     border: solid 3px var(--black);
     border-radius: 10px;
@@ -121,6 +121,10 @@
     
     .button-container {
         margin: 1em 0;
+    }
+
+    .home-button {
+        width: 7rem;
     }
     
     .home-image-container {

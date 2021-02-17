@@ -4,7 +4,9 @@ import '../css/navbar.css';
 
 function NavBar() {
 
-    const [navOpen, setNavOpen] = useState(true);
+    const [navOpen, setNavOpen] = useState(() => {
+        return true;
+    });
 
     const openNav = () => {
         setNavOpen(!navOpen);
