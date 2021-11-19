@@ -6,9 +6,6 @@
 .pnp.js
 .eslintcache
 
-# testing
-/coverage
-
 # production
 /build
 
