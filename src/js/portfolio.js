@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
-import descriptions from "../json/descriptions.json";
 import FilterTag from '../components/FilterTag';
-import FilterProject from '../components/FilterProject';
+import FilterProject from '../components/FilterProject'; 
+import skills from "../json/skills.json";
+import allProjects from "../json/projects.json";
 import '../css/portfolio.css';
 
 function Portfolio() {
@@ -11,11 +12,12 @@ function Portfolio() {
     });
 
     const [projects, setProjects] = useState(() => {
-        return descriptions.portfolio;
+        return allProjects;
     });
 
     const filterOpen = useRef(false);
 
+    // MOBILE ONLY
     var openFilter = (e) => {
         filterOpen.current = !filterOpen.current;
         if (window.matchMedia("only screen and (max-width: 600px)")) {
@@ -34,12 +36,10 @@ function Portfolio() {
 
     useEffect(() => {
         // Filter Projects
-        if (filters.length === 0) {
-            setProjects(descriptions.portfolio);
-        }
+        if (filters.length === 0) setProjects(allProjects);
         else {
-            const projectsCopy = [];
-            for (var project of descriptions.portfolio) {
+            let projectsCopy = [];
+            for (let project of allProjects) {
                 let projectTags = project.tags;
                 if (filters.every(filter => projectTags.includes(filter))) {
                     projectsCopy.push(project);
@@ -59,18 +59,18 @@ function Portfolio() {
             <div className="filter-nav-dropdown" onClick={openFilter}>Tap to view filters...</div>
                 <div className="filter-nav" id="filterNavID">
                     <div className="filter-nav-row">
-                        <FilterTag name="Java" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="Python" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="C#" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="JavaScript" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="HTML/CSS" filters={filters} setFilters={setFilters}/>
+                        {skills.Languages.map((language, index) => {
+                            return (
+                                <FilterTag key={language+index} name={language} filters={filters} setFilters={setFilters}/>
+                            )
+                        })}
                     </div>
                     <div className="filter-nav-row">
-                        <FilterTag name="React" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="Node.js" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="Unity" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="Blender" filters={filters} setFilters={setFilters}/>
-                        <FilterTag name="Phaser" filters={filters} setFilters={setFilters}/>
+                        {skills.Libraries.map((library, index) => {
+                            return (
+                                <FilterTag key={library+index} name={library} filters={filters} setFilters={setFilters}/>
+                            )
+                        })}
                     </div>
                     <div className="filter-nav-row">
                         <FilterTag name="Personal" filters={filters} setFilters={setFilters}/>
@@ -79,7 +79,7 @@ function Portfolio() {
                 </div>
                 <div className="page-content-flex">
                     <div className="page-content-title">
-                        <h1>Filter projects by language / framework / etc...</h1>
+                        <h1>Filter projects by language / framework / library / etc...</h1>
                     </div>
                     <div className="page-content-projects">
                         {projects.map((project, index) => {

@@ -1,0 +1,38 @@
+[
+    {
+        "heading": "c4me: College 4 Me",
+        "description": "A full-stack web application similar to Naviance that assists upcoming undergraduate students on their college planning by recommending them colleges and universities based on their profiles, grades, and test scores. This was developed primarily using React and jQuery for front-end design and MySQL and Java Servlets for back-end design. This application served as the final group project for the Software Engineering course over the Spring 2020 semester, where I was responsible for creating a majority of the front-end and UI/UX design. (Note: The current URL for this project only serves to display the front-end interface, and does not include any back-end communication)",
+        "image": "images/projects/c4me-college-4-me.png",
+        "preview": "/videos/speedbotpreview.mp4",
+        "github": "https://github.com/itsdanielg/c4me",
+        "demo": "https://itsdanielg.github.io/c4me/#/",
+        "tags": ["Java", "JavaScript", "HTML / CSS", "React", "Node.js", "University"]
+    },
+    {
+        "heading": "Boardwalk Hall Auditorium Organ",
+        "description": "A 3D-Simulator of a pipe organ based on the real life instrument found in the Boardwalk Hall Auditorium located in Atlantic City, NJ. This was created using Unity as a research project under Professor Richard McKenna in Stony Brook University during the Spring 2020 semester. The organ consists of 7 rows of playable keys that can only be played on certain sections at a time. An option to play one song can also be accessed as a mini-game. This application was also nominated as a finalist during Stony Brook University’s 16th Annual Game Programming competition.",
+        "image": "images/projects/boardwalk-hall-auditorium-organ.jpg",
+        "preview": "/videos/speedbotpreview.mp4",
+        "github": "https://github.com/itsdanielg/Virtual-Organ-Project/releases/",
+        "demo": "https://boardwalk-hall-organ.firebaseapp.com/",
+        "tags": ["C#", "Unity", "Blender", "University"]
+    },
+    {
+        "heading": "SpeedBot",
+        "description": "A 3D-Platform game created as the final group project for the Advanced Game Programming course in Stony Brook University during the Fall 2019 semester. This game was created using Unity and Blender, and can be played as an executable or through WebGL online. The objective of the game is to reach the endpoint of each level as fast as possible as you play a robot that is trying to escape a dystopian city ruled by a corrupt leader. This game was also nominated as a finalist during Stony Brook University’s 16th Annual Game Programming competition.",
+        "image": "images/projects/speedbot.jpg",
+        "preview": "/videos/speedbotpreview.mp4",
+        "github": "https://github.com/itsdanielg/CSE-381-Group-Project/releases",
+        "demo": "https://speed-bot.firebaseapp.com/",
+        "tags": ["C#", "Unity", "Blender", "University"]
+    },
+    {
+        "heading": "The Tail of a City",
+        "description": "A 2D-Adventure game created as the final group project for the Beginner Game Programming course in Stony Brook University during the Spring 2019 semester. This game was created using Phaser, a 2D game framework that utilizes JavaScript and WebGL, and can be played online. The objective of the game is to complete certain quests in each level as a playable dog, where quests are dependent on your in-game reputation and experience.",
+        "image": "images/projects/the-tail-of-a-city.png",
+        "preview": "/videos/speedbotpreview.mp4",
+        "github": "https://github.com/itsdanielg/CSE-380-Group-Project",
+        "demo": "http://the-tail-of-a-city.firebaseapp.com/",
+        "tags": ["HTML / CSS", "JavaScript", "Phaser", "University"]
+    }
+]
