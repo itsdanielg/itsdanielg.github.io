@@ -1,17 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react';
-// import {motion} from 'framer-motion';
 import descriptions from "../json/descriptions.json";
+import FilterTag from '../components/FilterTag';
 import '../css/portfolio.css';
-
-// const profMcKenna = "https://www3.cs.stonybrook.edu/~richard/";
 
 function Portfolio() {
 
-    var [filters, setFilters] = useState(() => {
+    const [filters, setFilters] = useState(() => {
         return [];
     });
 
-    var [projects, setProjects] = useState(() => {
+    const [projects, setProjects] = useState(() => {
         return descriptions.portfolio;
     });
 
@@ -31,27 +29,6 @@ function Portfolio() {
                 filterNav.style.display = "flex";
             }
         }
-    }
-
-    var filterNav = (e) => {
-        var div = e.currentTarget;
-        if (div.className === "filter-nav-tag-selected") {
-            div.className = "filter-nav-tag";
-            removeFilter(div.innerHTML);
-        }
-        else {
-            div.className = "filter-nav-tag-selected";
-            addFilter(div.innerHTML);
-        }
-    }
-
-    var addFilter = (innerHTML) => {
-        setFilters(prevFilters => [...prevFilters, (innerHTML)]);
-    }
-
-    var removeFilter = (innerHTML) => {
-        var newFilters = filters.filter((filter) => filter !== innerHTML);
-        setFilters(newFilters);
     }
 
     var descriptionOnClick = (e) => {
@@ -93,24 +70,22 @@ function Portfolio() {
             <div className="filter-nav-dropdown" onClick={openFilter}>Tap to view filters...</div>
                 <div className="filter-nav" id="filterNavID">
                     <div className="filter-nav-row">
-                        <div className="filter-nav-tag" onClick={filterNav}>Java</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>Python</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>C#</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>C</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>C++</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>JavaScript</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>HTML / CSS</div>
+                        <FilterTag name="Java" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="Python" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="C#" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="JavaScript" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="HTML/CSS" filters={filters} setFilters={setFilters}/>
                     </div>
                     <div className="filter-nav-row">
-                        <div className="filter-nav-tag" onClick={filterNav}>React</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>Node.js</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>Unity</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>Blender</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>Phaser</div>
+                        <FilterTag name="React" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="Node.js" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="Unity" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="Blender" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="Phaser" filters={filters} setFilters={setFilters}/>
                     </div>
                     <div className="filter-nav-row">
-                        <div className="filter-nav-tag" onClick={filterNav}>Personal</div>
-                        <div className="filter-nav-tag" onClick={filterNav}>University</div>
+                        <FilterTag name="Personal" filters={filters} setFilters={setFilters}/>
+                        <FilterTag name="University" filters={filters} setFilters={setFilters}/>
                     </div>
                 </div>
                 <div className="page-content-flex">

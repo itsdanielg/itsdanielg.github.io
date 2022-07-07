@@ -22,32 +22,6 @@
     list-style-type: none;
 }
 
-.filter-nav-tag {
-    flex-grow: 1;
-    margin: 0 0.3rem;
-    padding: 0.7rem;
-    border-radius: 0.3rem;
-    background-color: var(--darkGray);
-    color: var(--white);
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--buttonTransitionPreset);
-}
-
-.filter-nav-tag-selected {
-    flex-grow: 1;
-    margin: 0 0.3rem;
-    padding: 0.7rem;
-    border-radius: 0.3rem;
-    background-color: var(--red);
-    color: var(--white);
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--buttonTransitionPreset);
-}
-
 .filter-nav-dropdown {
     display: none;
 }
