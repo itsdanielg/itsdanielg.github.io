@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import descriptions from "../json/descriptions.json";
 import FilterTag from '../components/FilterTag';
+import FilterProject from '../components/FilterProject';
 import '../css/portfolio.css';
 
 function Portfolio() {
@@ -28,18 +29,6 @@ function Portfolio() {
                 div.innerHTML = "Tap to hide filters...";
                 filterNav.style.display = "flex";
             }
-        }
-    }
-
-    var descriptionOnClick = (e) => {
-        if (e.target.nodeName !== "H2") return;
-        var div = e.currentTarget;
-        var description = div.children[1];
-        if (description.className === "project-description-open") {
-            description.className = "project-description";
-        }
-        else {
-            description.className = "project-description-open";
         }
     }
 
@@ -95,35 +84,7 @@ function Portfolio() {
                     <div className="page-content-projects">
                         {projects.map((project, index) => {
                             return (
-                                <div key={index} className="project-container">
-                                    <div className="project-image" >
-                                        <img src={project.image} alt={project.heading}></img>
-                                        {/* <div className="project-image-hover">
-                                            <video autoPlay="autoplay">
-                                                <source src={preview} type="video/avi"/>
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div> */}
-                                    </div>
-                                    <div className="project-info" onClick={descriptionOnClick}>
-                                        <h2>{project.heading}</h2>
-                                        <div className="project-description">
-                                            <p>{project.description}</p>
-                                            <div className="links-container">
-                                                <a href={project.github} target="_blank" rel="noopener noreferrer">
-                                                    <div className="link-div">
-                                                        <h3>View Github</h3>
-                                                    </div>
-                                                </a>
-                                                <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                                                    <div className="link-div">
-                                                        <h3>View Demo</h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <FilterProject key={index} project={project}/>
                             )
                         })}
                     </div>
