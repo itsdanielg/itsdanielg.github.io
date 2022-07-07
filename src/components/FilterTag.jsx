@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import '../css/FilterTag.css'
 
 function FilterTag(props) {
@@ -7,34 +7,32 @@ function FilterTag(props) {
         return false;
     });
 
-    const addFilter = (innerHTML) => {
-        props.setFilters(prevFilters => [...prevFilters, (innerHTML)]);
+    const ref = useRef(null);
+
+    const addFilter = (textContent) => {
+        props.setFilters(prevFilters => [...prevFilters, (textContent)]);
     }
 
-    const removeFilter = (innerHTML) => {
-        var newFilters = props.filters.filter((filter) => filter !== innerHTML);
+    const removeFilter = (textContent) => {
+        var newFilters = props.filters.filter((filter) => filter !== textContent);
         props.setFilters(newFilters);
     }
 
-    const changeSelected = (e) => {
-        let div = e.currentTarget;
-        if (div.className === "filter-nav-tag-selected") {
-            div.className = "filter-nav-tag";
-            removeFilter(div.innerHTML);
-            setIsSelected(false);
+    useEffect(() => {
+        let div = ref.current;
+        if (isSelected) {
+            div.className = "filter-nav-tag-selected";
+            addFilter(div.textContent);
         }
         else {
-            div.className = "filter-nav-tag-selected";
-            addFilter(div.innerHTML);
-            setIsSelected(true);
+            div.className = "filter-nav-tag";
+            removeFilter(div.textContent);
         }
-    }
+    }, [isSelected])
 
     return (
-        <div className="filter-nav-tag" onClick={changeSelected}>
-            <p>
-                {props.name}
-            </p>
+        <div ref={ref} className="filter-nav-tag" onClick={() => setIsSelected(!isSelected)}>
+            <p>{props.name}</p>
         </div>
     )
 }
