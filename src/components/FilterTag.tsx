@@ -1,25 +1,31 @@
-import React, {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import '../css/FilterTag.css'
 
-function FilterTag(props) {
+interface Props {
+    name: string,
+    filters: Array<string>,
+    setFilters: (setFilters: any) => void;
+}
+
+function FilterTag(props: Props) {
 
     const [isSelected, setIsSelected] = useState(() => {
         return false;
     });
 
-    const ref = useRef(null);
+    const filterRef = useRef<HTMLDivElement>(null);
 
-    const addFilter = (textContent) => {
-        props.setFilters(prevFilters => [...prevFilters, (textContent)]);
+    const addFilter = (textContent: string) => {
+        props.setFilters((prevFilters: string[]) => [...prevFilters, (textContent)]);
     }
 
-    const removeFilter = (textContent) => {
+    const removeFilter = (textContent: string) => {
         var newFilters = props.filters.filter((filter) => filter !== textContent);
         props.setFilters(newFilters);
     }
 
     useEffect(() => {
-        let div = ref.current;
+        let div: any = filterRef.current;
         if (isSelected) {
             div.className = "filter-nav-tag-selected";
             addFilter(div.textContent);
@@ -31,7 +37,7 @@ function FilterTag(props) {
     }, [isSelected])
 
     return (
-        <div ref={ref} className="filter-nav-tag" onClick={() => setIsSelected(!isSelected)}>
+        <div ref={filterRef} className="filter-nav-tag" onClick={() => setIsSelected(!isSelected)}>
             <p>{props.name}</p>
         </div>
     )
