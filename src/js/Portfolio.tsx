@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import FilterTag from '../components/FilterTag';
 import FilterProject from '../components/FilterProject'; 
 import skills from "../json/skills.json";
@@ -15,14 +15,15 @@ function Portfolio() {
         return allProjects;
     });
 
+    // ????
     const filterOpen = useRef(false);
-
+ 
     // MOBILE ONLY
-    var openFilter = (e) => {
+    const openFilter = (e: any) => {
         filterOpen.current = !filterOpen.current;
         if (window.matchMedia("only screen and (max-width: 600px)")) {
-            var div = e.currentTarget;
-            var filterNav = document.getElementById("filterNavID");
+            let div: any = e.currentTarget;
+            let filterNav: any = document.getElementById("filterNavID");
             if (!filterOpen.current) {
                 div.innerHTML = "Tap to view filters...";
                 filterNav.style.display = "none";

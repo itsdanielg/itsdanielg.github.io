@@ -3,8 +3,8 @@ import '../css/FilterTag.css'
 
 interface Props {
     name: string,
-    filters: Array<string>,
-    setFilters: (setFilters: any) => void;
+    filters: string[],
+    setFilters(any: any): any;
 }
 
 function FilterTag(props: Props) {

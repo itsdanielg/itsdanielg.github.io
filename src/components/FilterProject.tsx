@@ -1,16 +1,28 @@
-import React, {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import '../css/FilterProject.css';
 
-function FilterProject(props) {
+interface Props {
+    project: {
+        heading: string,
+        description: string, 
+        image: string,
+        preview: string,
+        github: string,
+        demo: string, 
+        tags: string[];
+    }
+}
+
+function FilterProject(props: Props) {
 
     const [isOpen, setIsOpen] = useState(() => {
         return false;
     })
 
-    const ref = useRef(null);
+    const descRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        let description = ref.current;
+        let description: any = descRef.current;
         if (isOpen) description.className = "project-description-open";
         else description.className = "project-description";
     }, [isOpen])
@@ -28,7 +40,7 @@ function FilterProject(props) {
             </div>
             <div className="project-info" onClick={() => setIsOpen(!isOpen)}>
                 <h2>{props.project.heading}</h2>
-                <div ref={ref} className={"project-description"}>
+                <div ref={descRef} className={"project-description"}>
                     <p>{props.project.description}</p>
                     <div className="links-container">
                         <a href={props.project.github} target="_blank" rel="noopener noreferrer">
