@@ -2,7 +2,7 @@ import {useRef} from 'react';
 import emailjs from 'emailjs-com'
 import SocialLink from '../components/SocialLink';
 import descriptions from "../json/descriptions.json";
-import contact from "../json/contact.json";
+import contact from "../json/Contact.json";
 import '../css/contact.css';
 
 const serviceID = 'service_0v89qij';

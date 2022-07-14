@@ -3,7 +3,7 @@ import FilterTag from '../components/FilterTag';
 import FilterProject from '../components/FilterProject'; 
 import skills from "../json/skills.json";
 import allProjects from "../json/projects.json";
-import '../css/portfolio.css';
+import '../css/Portfolio.css';
 
 function Portfolio() {
 
