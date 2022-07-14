@@ -23,37 +23,41 @@ function Preloader() {
         }
     }
 
-    useEffect(() => {
-        document.body.style.overflow = "hidden";
-        timer.current = setInterval(changeProgress, 25);
-    }, []);
+    // useEffect(() => {
+    //     document.body.style.overflow = "hidden";
+    //     timer.current = setInterval(changeProgress, 25);
+    // }, []);
 
-    useEffect(() => {
-        if (progressState === "end") {
-            var header = document.getElementById("preloaderHeader");
-            var progressBar = document.getElementById("progressBarProgress").parentElement;
-            var container = document.getElementById("preloaderContainer");
-            header.className = "preloader-header-complete";
-            progressBar.className = "preloader-bar-complete";
-            container.className = "preloader-container-complete";
-            container.ontransitionend = () => {
-                transitionEndTime.current++;
-                if (transitionEndTime.current === 5) {
-                    console.log('Transition ended');
-                    document.body.style.overflow = "auto";
-                }
-            };
-        }
-    }, [progressState]);
+    // useEffect(() => {
+    //     if (progressState === "end") {
+    //         var header = document.getElementById("preloaderHeader");
+    //         var progressBar = document.getElementById("progressBarProgress").parentElement;
+    //         var container = document.getElementById("preloaderContainer");
+    //         header.className = "preloader-header-complete";
+    //         progressBar.className = "preloader-bar-complete";
+    //         container.className = "preloader-container-complete";
+    //         container.ontransitionend = () => {
+    //             transitionEndTime.current++;
+    //             if (transitionEndTime.current === 5) {
+    //                 console.log('Transition ended');
+    //                 document.body.style.overflow = "auto";
+    //             }
+    //         };
+    //     }
+    // }, [progressState]);
 
     return (
         <div className="preloader-container" id="preloaderContainer">
-            <div className="preloader-header" id="preloaderHeader">
+            <div className="preloader-hexagon">
+                <div className="preloader-hexagon-shape">
+                </div>
+            </div>
+            {/* <div className="preloader-header" id="preloaderHeader">
                 <h1>Loading...</h1>
             </div>
             <div className="preloader-bar" >
                 <div className="preloader-bar-progress" id="progressBarProgress"></div>
-            </div>
+            </div> */}
         </div>
     );
 
