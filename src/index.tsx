@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import {HashRouter} from 'react-router-dom';
-import App from './js/App';
+import App from './pages/App';
 import './css/index.css';
 
 ReactDOM.render(
