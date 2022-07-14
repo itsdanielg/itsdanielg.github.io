@@ -15,26 +15,17 @@ function FilterTag(props: Props) {
 
     const filterRef = useRef<HTMLDivElement>(null);
 
-    const addFilter = (textContent: string) => {
-        props.setFilters((prevFilters: string[]) => [...prevFilters, (textContent)]);
-    }
-
-    const removeFilter = (textContent: string) => {
-        var newFilters = props.filters.filter((filter) => filter !== textContent);
-        props.setFilters(newFilters);
-    }
-
     useEffect(() => {
         let div: any = filterRef.current;
         if (isSelected) {
             div.className = "filter-nav-tag-selected";
-            addFilter(div.textContent);
+            props.setFilters((prevFilters: string[]) => [...prevFilters, (div.textContent)]);
         }
         else {
             div.className = "filter-nav-tag";
-            removeFilter(div.textContent);
+            props.setFilters(props.filters.filter((filter) => filter !== div.textContent));
         }
-    }, [isSelected])
+    })
 
     return (
         <div ref={filterRef} className="filter-nav-tag" onClick={() => setIsSelected(!isSelected)}>
