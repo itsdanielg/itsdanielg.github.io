@@ -1,6 +1,6 @@
 // import {useEffect} from 'react';
 import about from "../json/about.json";
-import '../css/About.css';
+import '../styles/About.css';
 
 const bgImage = "/images/bg.jpg";
 const sbuImage = "/images/sbu.jpg";

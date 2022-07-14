@@ -1,4 +1,4 @@
-import '../css/SocialLink.css';
+import '../styles/SocialLink.css';
 
 interface Props {
     name: string,

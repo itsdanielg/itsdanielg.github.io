@@ -5,7 +5,7 @@ import Home from './Home';
 import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
-import '../css/App.css';
+import '../styles/App.css';
 
 function App() {
 

@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
-import '../css/FilterTag.css'
+import '../styles/FilterTag.css'
 
 interface Props {
     name: string,
