@@ -1,0 +1,19 @@
+{
+    "links": [
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/itsdanielg",
+            "image": "/svg/linkedin.svg"
+        },
+        {
+            "name": "Github",
+            "url": "https://github.com/itsdanielg",
+            "image": "/svg/github.svg"
+        },
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/itsdanielg_/",
+            "image": "/svg/instagram.svg"
+        }
+    ]
+}

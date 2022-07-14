@@ -1,0 +1,10 @@
+.social-link-wrapper {
+    padding: 1rem;
+    width: 100%;
+    transform: scale(1.0);
+    transition: var(--buttonTransitionPreset);
+}
+
+.social-link-wrapper img {
+    width: 100%;
+}
