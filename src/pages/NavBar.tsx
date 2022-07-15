@@ -10,13 +10,13 @@ function NavBar() {
 
     const openNav = () => {
         setNavOpen(!navOpen);
-        if (navOpen) {
-            document.getElementById("navbar-button-id").className = "navbar-button-selected";
-        }
-        else {
-            document.getElementById("navbar-button-id").className = "navbar-button";
-        }
-        var wrapper = document.getElementById("navbar-wrapper-id");
+        // if (navOpen) {
+        //     document.getElementById("navbar-button-id").className = "navbar-button-selected";
+        // }
+        // else {
+        //     document.getElementById("navbar-button-id").className = "navbar-button";
+        // }
+        let wrapper: any = document.getElementById("navbar-wrapper-id");
         if (navOpen) {
             wrapper.style.opacity = "1";
             wrapper.style.pointerEvents = "auto";

@@ -2,8 +2,8 @@ import {useRef} from 'react';
 import emailjs from 'emailjs-com'
 import SocialLink from '../components/SocialLink';
 import descriptions from "../json/descriptions.json";
-import contact from "../json/Contact.json";
-import '../styles/contact.css';
+import contact from "../json/contact.json";
+import '../styles/Contact.css';
 
 const serviceID = 'service_0v89qij';
 const templateID = 'default_template_id';

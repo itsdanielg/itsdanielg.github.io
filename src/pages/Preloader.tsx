@@ -1,27 +1,27 @@
-import React, {useState, useEffect, useRef} from 'react';
+// import {useState, useRef} from 'react';
 import '../styles/Preloader.css';
 
 function Preloader() {
 
-    const [progressState, setProgressState] = useState(() => {
-        return "start";
-    })
+    // const [progressState, setProgressState] = useState(() => {
+    //     return "start";
+    // })
 
-    const timer = useRef();
-    const progress = useRef(10);
+    // const timer = useRef();
+    // const progress = useRef(10);
 
-    // Loading transition ends on 5
-    const transitionEndTime = useRef(0);
+    // // Loading transition ends on 5
+    // const transitionEndTime = useRef(0);
 
-    const changeProgress = () => {
-        progress.current++;
-        var progressBar = document.getElementById("progressBarProgress");
-        progressBar.style.width = `${progress.current}%`;
-        if (progress.current >= 100) {
-            clearInterval(timer.current);
-            setProgressState("end");
-        }
-    }
+    // const changeProgress = () => {
+    //     progress.current++;
+    //     var progressBar = document.getElementById("progressBarProgress");
+    //     progressBar.style.width = `${progress.current}%`;
+    //     if (progress.current >= 100) {
+    //         clearInterval(timer.current);
+    //         setProgressState("end");
+    //     }
+    // }
 
     // useEffect(() => {
     //     document.body.style.overflow = "hidden";
