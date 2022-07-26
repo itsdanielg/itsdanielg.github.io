@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+    
+    .filter-nav-tag {
+        margin: 0.2rem 0.3rem;
+    }
+    
+    .filter-nav-tag-selected {
+        margin: 0.2rem 0.3rem;
+    }
+
+    .filter-nav-tag:hover {
+        background: green;
+        transition: var(--transitionPreset);
+    }
+
+    .filter-nav-tag-selected:hover {
+        background: green;
+        transition: var(--transitionPreset);
+    }
+
+}

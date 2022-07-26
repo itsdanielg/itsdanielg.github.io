@@ -1,5 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import '../styles/FilterProject.css';
+import '../styles/mobile/FilterProject.css';
 
 interface Props {
     project: {

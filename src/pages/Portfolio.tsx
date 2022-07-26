@@ -4,6 +4,7 @@ import FilterProject from '../components/FilterProject';
 import skills from "../json/skills.json";
 import allProjects from "../json/projects.json";
 import '../styles/Portfolio.css';
+import '../styles/mobile/Portfolio.css';
 
 function Portfolio() {
 

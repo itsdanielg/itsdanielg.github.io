@@ -1,10 +1,11 @@
 import {useState, useEffect, useRef} from 'react';
 import '../styles/FilterTag.css'
+import '../styles/mobile/FilterTag.css'
 
 interface Props {
     name: string,
     filters: string[],
-    setFilters(any: any): any;
+    setFilters(filters: any): any;
 }
 
 function FilterTag(props: Props) {
@@ -16,16 +17,16 @@ function FilterTag(props: Props) {
     const filterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        let div: any = filterRef.current;
+        let filterNavTag: any = filterRef.current;
         if (isSelected) {
-            div.className = "filter-nav-tag-selected";
-            props.setFilters((prevFilters: string[]) => [...prevFilters, (div.textContent)]);
+            filterNavTag.className = "filter-nav-tag-selected";
+            props.setFilters((prevFilters: string[]) => [...prevFilters, (filterNavTag.textContent)]);
         }
         else {
-            div.className = "filter-nav-tag";
-            props.setFilters(props.filters.filter((filter) => filter !== div.textContent));
+            filterNavTag.className = "filter-nav-tag";
+            props.setFilters(props.filters.filter((filter) => filter !== filterNavTag.textContent));
         }
-    })
+    }, [isSelected])
 
     return (
         <div ref={filterRef} className="filter-nav-tag" onClick={() => setIsSelected(!isSelected)}>
