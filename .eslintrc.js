@@ -28,6 +28,7 @@ module.exports = {
   ],
   rules: {
     "react/react-in-jsx-scope": "off",
-    "react/jsx-indent": ["error", 4]
+    "react/jsx-indent": ["error", 4],
+    quotes: ["error", "double", { "allowTemplateLiterals": true }]
   }
 }
