@@ -1,3 +1,4 @@
+export * from "./Contact";
 export * from "./Development";
 export * from "./Error";
 export * from "./Explore";

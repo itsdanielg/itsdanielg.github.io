@@ -3,6 +3,7 @@ import { useProject } from "../../../hooks/useProject";
 import { Image } from "../../Atoms/Image";
 import { HoverableVideo } from "../HoverableVideo";
 import { ProjectDescription } from "./ProjectDescription";
+import { ProjectSlideshow } from "./ProjectSlideshow";
 
 const DEFAULT_PROJECT_BLOCK_STYLE = [
   "w-full",
@@ -46,10 +47,7 @@ export function ProjectBlock({
   if (showVideo) {
     return (
       <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
-        <HoverableVideo
-          video={video}
-          thumbnail={image}
-        />
+        <ProjectSlideshow image={image} />
       </div>
     );
   }

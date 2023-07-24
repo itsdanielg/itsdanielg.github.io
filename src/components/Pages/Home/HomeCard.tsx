@@ -1,7 +1,7 @@
 import profilePicture from "../../../assets/images/profile.png";
-import { AnimatedLinkButton } from "../../Compounds/AnimatedButton";
 import { HoverableImage } from "../../Compounds/HoverableImage";
 import { Contact } from "../Contact";
+import { Overview } from "../Overview";
 
 const HEADLINE_TITLE = "Hey there,";
 const HEADLINE_DESCRIPTION = "I'm Daniel, a software engineer and web developer based in New York.";
@@ -19,10 +19,7 @@ export function HomeCard() {
           <p className="text-lg">{HEADLINE_DESCRIPTION}</p>
         </div>
         <div className="flex items-center gap-4">
-          <AnimatedLinkButton
-            label="Career Overview"
-            to="/overview"
-          />
+          <Overview />
           <Contact />
         </div>
       </div>

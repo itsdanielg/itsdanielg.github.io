@@ -1,14 +1,9 @@
 import { Link } from "react-router-dom";
 import profilePicture from "../../../assets/images/profile.png";
 import { StaticImage } from "../../Compounds/StaticImage";
-import { Contact } from "../../Pages/Contact";
-import { NavigationLink } from "./NavigationLink";
-import { Hamburger } from "../../Atoms/Hamburger";
-import { useState } from "react";
+import { Contact, Overview } from "../../Pages";
 
 export function Navigation() {
-  const [show, setShow] = useState(false);
-
   return (
     <div className="flex items-center justify-between w-full p-4 border-b-2">
       <Link to={"/"}>
@@ -21,18 +16,9 @@ export function Navigation() {
         </div>
       </Link>
       <div className=" md:flex flex gap-3">
-        <NavigationLink
-          label="Resume"
-          url={"/overview"}
-        />
+        <Overview />
         <Contact />
       </div>
-      {/* <div className="md:hidden flex items-center gap-4">
-        <Hamburger
-          toggle={show}
-          onClick={() => setShow(!show)}
-        />
-      </div> */}
     </div>
   );
 }

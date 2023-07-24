@@ -1,7 +1,14 @@
-export function ProjectSlideshow() {
+import { Image } from "../../Atoms/Image";
+
+interface ProjectsSlideshowProps {
+  image: string;
+}
+
+export function ProjectSlideshow({ image }: ProjectsSlideshowProps) {
   return (
-    <div>
-      <div></div>
-    </div>
+    <Image
+      className="object-cover"
+      src={image}
+    />
   );
 }
