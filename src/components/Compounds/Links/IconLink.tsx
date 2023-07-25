@@ -10,7 +10,7 @@ const DEFAULT_ICON_LINK_STYLE = [
   "bg-no-repeat",
   "[background-position:0_100%]",
   "[background-size:0_100%]",
-  "hover:[background-size:100%_100%]",
+  "md:hover:[background-size:100%_100%]",
   "transition-all",
   "duration-300"
 ].join(" ");

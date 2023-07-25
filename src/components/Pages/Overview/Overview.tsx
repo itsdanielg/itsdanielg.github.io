@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { OverviewCard } from "./OverviewCard";
+import { OverviewModal } from "./OverviewModal";
 import { AnimatedButton } from "../../Compounds/AnimatedButton";
 
 export function Overview() {
@@ -11,7 +11,7 @@ export function Overview() {
         onClick={() => setShow(true)}
       />
       {show && (
-        <OverviewCard
+        <OverviewModal
           show={show}
           setShow={setShow}
         />

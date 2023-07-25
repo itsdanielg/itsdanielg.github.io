@@ -7,7 +7,7 @@ export function Card({ children, className = "", ...props }: CardProps) {
   return (
     <div
       {...props}
-      className={`${className} bg-white rounded-md shadow-xl overflow-hidden`}>
+      className={`${className} bg-white rounded-md shadow-xl`}>
       {children}
     </div>
   );

@@ -17,7 +17,7 @@ export function Modal({ children, onClick, root = "modal", className = "", ...pr
       className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-black-1-t animate-fade"
       onClick={onClick}>
       <div
-        className={`${className} rounded-md bg-white-1 animate-modalOpen`}
+        className={`${className} rounded-none md:rounded-lg bg-white-1 animate-modalOpen`}
         onClick={(e: any) => e.stopPropagation()}>
         {children}
       </div>

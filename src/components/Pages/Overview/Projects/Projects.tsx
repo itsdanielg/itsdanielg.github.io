@@ -10,7 +10,7 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <div className="flex flex-col items-start gap-2 w-full">
       <ProfileTitle label="projects" />
-      <div className="flex items-center gap-4 p-4 bg-black-1 rounded-lg">
+      <div className="flex flex-col md:flex-row items-center gap-4 md:p-4 md:bg-black-1 rounded-lg">
         {projects.map((project, index) => (
           <ProjectBlock
             key={project.name + index}

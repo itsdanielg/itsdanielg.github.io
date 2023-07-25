@@ -7,7 +7,7 @@ interface TechStackRowProps {
 
 export function TechStackRow({ technologies }: TechStackRowProps) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-wrap items-center gap-4">
       {technologies.map((technology, index) => (
         <IconLink
           key={technology.url + index}

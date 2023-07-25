@@ -8,10 +8,10 @@ export function OverviewEducation() {
   const courses = useCourses(coursesToShow);
 
   return (
-    <Card className="flex flex-col items-start gap-6 w-full mt-auto p-4 overflow-auto">
+    <Card className="flex flex-col items-start gap-6 w-full md:mt-auto p-4">
       <SVGLogo
         fileName="sbu"
-        width="w-full"
+        width="w-36 md:w-full"
       />
       <div className="flex flex-col">
         <span className="text-lg font-bold">Relevant Courses</span>
