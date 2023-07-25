@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import profilePicture from "../../../assets/images/profile.png";
+import portrait from "../../../assets/portraitTransparent.png";
 import { StaticImage } from "../../Compounds/StaticImage";
 import { Contact, Overview } from "../../Pages";
 
@@ -9,7 +9,7 @@ export function Navigation() {
       <Link to={"/"}>
         <div className="flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-blue-1 transition-all">
           <StaticImage
-            url={profilePicture}
+            url={portrait}
             width="w-12 md:w-[3rem]"
           />
           <span>Daniel Garcia</span>

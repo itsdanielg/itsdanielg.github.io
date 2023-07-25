@@ -10,7 +10,7 @@ export function OverviewEducation() {
   return (
     <Card className="flex flex-col items-start gap-6 w-full mt-auto p-4 overflow-auto">
       <SVGLogo
-        fileName="sbu-stack"
+        fileName="sbu"
         width="w-full"
       />
       <div className="flex flex-col">

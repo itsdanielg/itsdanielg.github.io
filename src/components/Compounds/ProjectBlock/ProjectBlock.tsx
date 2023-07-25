@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useProject } from "../../../hooks/useProject";
+import { useProject } from "../../../api/hooks/useProject";
 import { Image } from "../../Atoms/Image";
 import { HoverableVideo } from "../HoverableVideo";
 import { ProjectDescription } from "./ProjectDescription";
@@ -42,12 +42,12 @@ export function ProjectBlock({
   demo = "",
   summary = ""
 }: ProjectBlockProps) {
-  const { image, video } = useProject(fileName);
+  const { thumbnail, video } = useProject(fileName);
 
   if (showVideo) {
     return (
       <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
-        <ProjectSlideshow image={image} />
+        <ProjectSlideshow image={thumbnail} />
       </div>
     );
   }
@@ -61,7 +61,7 @@ export function ProjectBlock({
       onMouseOut={() => setShow(false)}>
       <Image
         className="object-cover"
-        src={image}
+        src={thumbnail}
       />
       <ProjectDescription
         show={show}

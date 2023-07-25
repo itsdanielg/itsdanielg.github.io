@@ -1,6 +1,5 @@
 import { Experience } from "../../../../types";
 import { TooltipLink } from "../../../Compounds/Links";
-import defMethodSVG from "../../../../assets/logos/defmethod.svg";
 import { ProfileTitle } from "../../../Compounds/ProfileTitle";
 import { ExperiencesRow } from "./ExperiencesRow";
 
@@ -19,7 +18,7 @@ export function Experiences({ experiences }: ExperiencesProps) {
           <TooltipLink
             name={experience.location}
             url={experience.url}
-            imageUrl={defMethodSVG}
+            imageUrl={"/svg/defmethod.svg"}
           />
           {experience.positions.map((position, index) => (
             <ExperiencesRow

@@ -1,4 +1,4 @@
-import profilePicture from "../../../assets/images/profile.png";
+import portrait from "../../../assets/portraitTransparent.png";
 import { HEADLINE } from "../../../text/headline";
 import { Card } from "../../Atoms/Card";
 import { HoverableImage } from "../../Compounds/HoverableImage";
@@ -12,7 +12,7 @@ export function Explore() {
       <div className="flex flex-col items-center gap-4 h-screen my-8 mx-96 overflow-y-auto">
         <TextCard text={HEADLINE} />
         <StaticImage
-          url={profilePicture}
+          url={portrait}
           width="sm:w-[26rem]"
         />
       </div>

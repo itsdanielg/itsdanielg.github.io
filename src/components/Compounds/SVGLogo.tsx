@@ -1,4 +1,3 @@
-import { useSVG } from "../../hooks/useSVG";
 import { Image } from "../Atoms/Image";
 
 export interface SVGLogoProps {
@@ -7,12 +6,12 @@ export interface SVGLogoProps {
 }
 
 export function SVGLogo({ fileName, width = "w-6" }: SVGLogoProps) {
-  const svg = useSVG("logos", fileName);
+  const svg = `/svg/${fileName}.svg`;
 
   return (
     <div className={`${width} h-auto`}>
       <Image
-        src={svg}
+        src={`/svg/${fileName}.svg`}
         alt={fileName}
       />
     </div>

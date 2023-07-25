@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import profilePicture from "../../../assets/images/profile.jpg";
+import portrait from "../../../assets/portrait.jpg";
 import { experiences, projects } from "../../../text";
 import { AnimatedLinkButton } from "../../Compounds/AnimatedButton";
 import { StaticImage } from "../../Compounds/StaticImage";
@@ -23,7 +23,7 @@ export function OverviewCard({ show, setShow }: OverviewCard) {
       setShow={setShow}>
       <div className="flex w-full h-full p-8">
         <div className="flex flex-col items-start gap-4 w-80 pr-6 mr-6 border-r border-black">
-          <StaticImage url={profilePicture} />
+          <StaticImage url={portrait} />
           <Info />
           <OverviewEducation />
         </div>

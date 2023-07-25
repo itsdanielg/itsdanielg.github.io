@@ -1,4 +1,3 @@
-import { useSVG } from "../../hooks/useSVG";
 import { Image } from "../Atoms/Image";
 
 export interface SVGIconProps {
@@ -7,7 +6,7 @@ export interface SVGIconProps {
 }
 
 export function SVGIcon({ fileName, width = "w-5" }: SVGIconProps) {
-  const svg = useSVG("icons", fileName);
+  const svg = `/svg/${fileName}.svg`;
 
   return (
     <div className={`${width} aspect-square`}>

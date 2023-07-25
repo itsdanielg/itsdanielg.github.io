@@ -1,4 +1,4 @@
-import profilePicture from "../../../assets/images/profile.png";
+import portrait from "../../../assets/portraitTransparent.png";
 import { HoverableImage } from "../../Compounds/HoverableImage";
 import { Contact } from "../Contact";
 import { Overview } from "../Overview";
@@ -10,7 +10,7 @@ export function HomeCard() {
   return (
     <div className="flex flex-col md:flex-row items-center gap-4 p-12">
       <HoverableImage
-        url={profilePicture}
+        url={portrait}
         width="md:w-[26rem]"
       />
       <div className="flex flex-col items-center md:items-start gap-8">
