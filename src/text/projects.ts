@@ -36,7 +36,7 @@ export const projects = [
     name: "c4me: College 4 Me",
     fileName: "c4me",
     github: "https://github.com/itsdanielg/c4me",
-    demo: "https://danieljedrylgarcia.me/c4me/#/",
+    demo: "https://itsdanielg.github.io/c4me/#/",
     date: "January 2020 - May 2020",
     skills: ["JavaScript", "Java", "SQL", "React", "jQuery", "Java Servlets"],
     summary:
