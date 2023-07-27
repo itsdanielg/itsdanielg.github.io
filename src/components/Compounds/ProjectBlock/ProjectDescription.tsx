@@ -1,4 +1,5 @@
 import { AnimatedLinkButton } from "../AnimatedButton";
+import { DemoButton, GithubButton } from "./ProjectBlockButton";
 
 interface ProjectDescriptionProps {
   show: boolean;
@@ -16,18 +17,8 @@ export function ProjectDescription({ show = false, name, github, demo, summary }
       <span className="text-xl text-center font-bold font-expletusSans">{name.toUpperCase()}</span>
       <span className="text-md text-center">{summary}</span>
       <div className="flex items-center justify-center gap-4 mt-auto">
-        <AnimatedLinkButton
-          className="text-sm"
-          label="View Github"
-          to={github}
-          target
-        />
-        <AnimatedLinkButton
-          className="text-sm"
-          label="View Demo"
-          to={demo}
-          target
-        />
+        <GithubButton to={github} />
+        <DemoButton to={demo} />
       </div>
     </div>
   );

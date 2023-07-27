@@ -1,4 +1,4 @@
-import { AnimatedLinkButton } from "../../../Compounds/AnimatedButton";
+import { GithubButton, DemoButton } from "../../../Compounds/ProjectBlock/ProjectBlockButton";
 
 interface ProjectListDescriptionProps {
   name: string;
@@ -20,18 +20,8 @@ export function ProjectListDescription({ name, github, demo, description }: Proj
         ))}
       </div>
       <div className="flex items-center justify-end md:justify-start gap-2 w-full">
-        <AnimatedLinkButton
-          className="text-md"
-          label="View Github"
-          to={github}
-          target
-        />
-        <AnimatedLinkButton
-          className="text-md"
-          label="View Demo"
-          to={demo}
-          target
-        />
+        <GithubButton to={github} />
+        <DemoButton to={demo} />
       </div>
     </div>
   );
