@@ -19,7 +19,7 @@ export function ContactSnackbar({ label, showSnackbar, setShowSnackbar, error }:
   };
 
   const visibility = showSnackbar ? "visible animate-snackbar" : "invisible";
-  const errorStyle = error ? "bg-black-1" : "bg-blue-1 text-white";
+  const errorStyle = error ? "bg-black-1" : "bg-blue text-white";
 
   if (showSnackbar) showResult();
   return (

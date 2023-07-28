@@ -4,8 +4,8 @@ import { Button, LinkButton } from "../Atoms/Button";
 const DEFAULT_BUTTON_STYLE = [
   "bg-white",
   "bg-gradient-to-r",
-  "from-blue-1",
-  "to-blue-1",
+  "from-blue",
+  "to-blue",
   "bg-no-repeat",
   "[background-position:0_100%]",
   "[background-size:0_100%]"

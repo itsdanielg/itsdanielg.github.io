@@ -18,7 +18,7 @@ export function TooltipLink({ name, url, imageUrl, ...props }: TooltipLinkProps)
       placement="right"
       content={<Tooltip url={imageUrl} />}>
       <Link
-        className="text-blue-1 text-lg"
+        className="text-blue text-lg"
         target="_blank"
         to={url}>
         {name}

@@ -25,7 +25,7 @@ export function Button({
   label,
   onClick,
   disabled = false,
-  background = "bg-blue-1 text-white md:hover:bg-blue-1-t",
+  background = "bg-blue text-white md:hover:bg-blue-transparent",
   className = "",
   ...props
 }: ButtonProps) {
@@ -47,7 +47,7 @@ export function LinkButton({
   to,
   disabled = false,
   target = false,
-  background = "bg-blue-1 text-white md:hover:bg-blue-1-t",
+  background = "bg-blue text-white md:hover:bg-blue-transparent",
   className = "",
   ...props
 }: LinkButtonProps) {

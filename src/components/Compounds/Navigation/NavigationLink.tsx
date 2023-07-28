@@ -10,7 +10,7 @@ interface NavigationLinkProps {
 export function NavigationLink({ label, url }: NavigationLinkProps) {
   const pathname = useLocation().pathname;
 
-  const linkStyle = pathname == url ? "bg-blue-1" : "bg-blue-1";
+  const linkStyle = pathname == url ? "bg-blue" : "bg-blue";
   const disabled = pathname == url ? "pointer-events-none" : "pointer-events-auto";
 
   return (

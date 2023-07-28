@@ -57,7 +57,7 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
           <Loader width="w-12" />
         ) : (
           <Button
-            className="p-2 bg-blue-1 rounded-lg"
+            className="p-2 rounded-lg"
             label="Submit"
             onClick={async () => await handleSubmit()}
           />

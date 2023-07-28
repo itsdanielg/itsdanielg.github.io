@@ -31,7 +31,7 @@ export function Filters({ filters, setFilters }: FiltersProps) {
           />
         ))}
         <Button
-          className="text-blue-1 md:hover:text-white transition"
+          className="md:hover:text-white transition"
           label="Add Filter"
           onClick={() => setShow(true)}
         />

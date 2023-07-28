@@ -8,7 +8,7 @@ export function Loader({ width = "w-32" }: LoaderProps) {
       <div role="status">
         <svg
           aria-hidden="true"
-          className="w-full h-full text-black-1 animate-spin dark:text-black-1 fill-blue-1"
+          className="w-full h-full text-black-1 animate-spin dark:text-black-1 fill-blue"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">

@@ -15,7 +15,7 @@ export function LabelLink({ label, url, size = "", ...props }: LabelLinkProps) {
       target="_blank"
       to={url}>
       <Label
-        className={`${size} text-blue-1`}
+        className={`${size} text-blue`}
         label={label}
       />
     </Link>

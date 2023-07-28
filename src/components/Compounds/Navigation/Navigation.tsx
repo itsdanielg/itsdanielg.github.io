@@ -7,7 +7,7 @@ export function Navigation() {
   return (
     <div className="flex items-center justify-between w-full p-4 border-b-2">
       <Link to={"/"}>
-        <div className="flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-blue-1 transition-all">
+        <div className="flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-blue transition-all">
           <StaticImage
             url={portrait}
             width="w-12 md:w-[3rem]"

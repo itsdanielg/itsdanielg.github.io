@@ -21,7 +21,7 @@ export function InfoRow({ type }: InfoRowProps) {
           className="group"
           href={`mailto:${contact[type]}`}>
           <Label
-            className="text-blue-1"
+            className="text-blue"
             label={contact[type]}
           />
         </a>

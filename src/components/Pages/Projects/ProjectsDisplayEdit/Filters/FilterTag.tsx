@@ -7,7 +7,7 @@ interface FilterTagProps {
 
 export function FilterTag({ filter, onClick }: FilterTagProps) {
   return (
-    <div className="flex items-center gap-2 p-1 px-3 rounded-2xl bg-blue-1">
+    <div className="flex items-center gap-2 p-1 px-3 rounded-2xl bg-blue">
       <span className="text-white-1">{filter}</span>
       <button
         className="relative w-3 h-full"
