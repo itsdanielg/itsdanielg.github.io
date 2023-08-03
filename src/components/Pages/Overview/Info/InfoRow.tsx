@@ -1,6 +1,6 @@
 import { contact } from "../../../../text/contact";
+import { Label } from "../../../Atoms";
 import { SVGIcon } from "../../../Compounds/SVGIcon";
-import { Label } from "../../../Atoms/Label";
 import { LabelLink } from "../../../Compounds/Links";
 
 export interface InfoRowProps {

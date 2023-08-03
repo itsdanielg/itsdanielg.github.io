@@ -1,3 +1,5 @@
+import { HTMLAttributes } from "react";
+
 const DEFAULT_LABEL_STYLE = [
   "bg-gradient-to-r",
   "from-blue",
@@ -11,7 +13,7 @@ const DEFAULT_LABEL_STYLE = [
   "duration-300"
 ].join(" ");
 
-interface LabelProps {
+interface LabelProps extends HTMLAttributes<HTMLSpanElement> {
   label: string;
   className?: string;
 }

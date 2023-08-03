@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Label } from "../../Atoms/Label";
+import { Label } from "../../Atoms";
 
 interface LabelLinkProps {
   label: string;
