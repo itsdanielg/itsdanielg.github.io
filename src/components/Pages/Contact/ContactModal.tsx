@@ -30,6 +30,7 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
     <StandardModal
       show={show}
       setShow={setShow}
+      root="modal2"
       className="flex flex-col gap-4 w-[85%] md:w-auto p-6">
       <span className="text-xl">Let's get in touch!</span>
       <form className="flex flex-col items-center gap-4">

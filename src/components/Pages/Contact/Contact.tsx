@@ -13,13 +13,11 @@ export function Contact() {
         label="Contact"
         onClick={() => setShow(true)}
       />
-      {show && (
-        <ContactModal
-          show={show}
-          setShow={setShow}
-          setShowSnackbar={setShowSnackbar}
-        />
-      )}
+      <ContactModal
+        show={show}
+        setShow={setShow}
+        setShowSnackbar={setShowSnackbar}
+      />
       <ContactSnackbar
         showSnackbar={showSnackbar}
         setShowSnackbar={setShowSnackbar}

@@ -10,12 +10,10 @@ export function Overview() {
         label="Overview"
         onClick={() => setShow(true)}
       />
-      {show && (
-        <OverviewModal
-          show={show}
-          setShow={setShow}
-        />
-      )}
+      <OverviewModal
+        show={show}
+        setShow={setShow}
+      />
     </>
   );
 }

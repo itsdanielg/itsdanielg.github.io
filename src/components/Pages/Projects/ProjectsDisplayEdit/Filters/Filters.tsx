@@ -35,14 +35,12 @@ export function Filters({ filters, setFilters }: FiltersProps) {
           label="Add Filter"
           onClick={() => setShow(true)}
         />
-        {show && (
-          <FiltersModal
-            show={show}
-            filters={filters}
-            setShow={setShow}
-            setFilters={setFilters}
-          />
-        )}
+        <FiltersModal
+          show={show}
+          filters={filters}
+          setShow={setShow}
+          setFilters={setFilters}
+        />
       </div>
     </div>
   );
