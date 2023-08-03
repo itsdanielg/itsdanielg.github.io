@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { Technology } from "../../../../../types";
-import { Toggle } from "../../../../Atoms/Toggle";
 import { ProfileTitle } from "../../../../Compounds/ProfileTitle";
+import { FiltersModalToggle } from "./FiltersModalToggle";
 
 interface FiltersModalTechnologiesProps {
   title: string;
@@ -33,17 +33,13 @@ export function FiltersModalTechnologies({
           .map(({ label, svg }, index) => {
             const isToggle = selectedFilters.includes(label);
             return (
-              <Toggle
+              <FiltersModalToggle
                 key={label + index}
-                className="p-2"
                 isToggle={isToggle}
-                onClick={() => {
-                  if (!isToggle) addFilter(label);
-                  else removeFilter(label);
-                }}
                 svg={svg}
-                svgWidth="w-8"
                 label={label}
+                addFilter={addFilter}
+                removeFilter={removeFilter}
               />
             );
           })}

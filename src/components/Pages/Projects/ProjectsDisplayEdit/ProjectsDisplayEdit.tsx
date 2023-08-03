@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { Filters } from "./Filters/Filters";
-import { Toggle } from "../../../Atoms/Toggle";
+import { Toggle } from "../../../Atoms";
 
 interface ProjectsDisplayEditProps {
   filters: string[];
@@ -20,14 +20,14 @@ export function ProjectsDisplayEdit({ filters, isGrid, setFilters, setIsGrid }: 
         <Toggle
           className="p-1 border-none"
           isToggle={isGrid}
-          onClick={() => setIsGrid(true)}
           svg="grid"
+          onClick={() => setIsGrid(true)}
         />
         <Toggle
           className="p-1 border-none"
           isToggle={!isGrid}
-          onClick={() => setIsGrid(false)}
           svg="list"
+          onClick={() => setIsGrid(false)}
         />
       </div>
     </div>

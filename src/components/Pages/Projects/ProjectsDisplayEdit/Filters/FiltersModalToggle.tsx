@@ -1,5 +1,4 @@
-import { Toggle } from "../../../../Atoms/Toggle";
-import { SVGIcon } from "../../../../Compounds/SVGIcon";
+import { Toggle } from "../../../../Atoms";
 
 interface FiltersModalToggle {
   isToggle: boolean;
@@ -14,13 +13,13 @@ export function FiltersModalToggle({ isToggle, svg, label, addFilter, removeFilt
     <Toggle
       className="p-2"
       isToggle={isToggle}
+      svg={svg}
+      svgWidth="w-8"
+      label={label}
       onClick={() => {
         if (!isToggle) addFilter(label);
         else removeFilter(label);
       }}
-      svg={svg}
-      svgWidth="w-8"
-      label={label}
     />
   );
 }
