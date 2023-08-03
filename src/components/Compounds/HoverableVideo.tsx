@@ -1,5 +1,5 @@
 import HoverVideoPlayer from "react-hover-video-player";
-import { Image } from "../Atoms/Image";
+import { Image } from "../Atoms";
 
 interface HoverableVideoProps {
   video: string;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useProject } from "../../../api/hooks/useProject";
-import { Image } from "../../Atoms/Image";
+import { Image } from "../../Atoms";
 import { HoverableVideo } from "../HoverableVideo";
 import { ProjectDescription } from "./ProjectDescription";
 import { ProjectSlideshow } from "./ProjectSlideshow";

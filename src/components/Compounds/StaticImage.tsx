@@ -1,4 +1,4 @@
-import { Image } from "../Atoms/Image";
+import { Image } from "../Atoms";
 
 interface StaticImageProps {
   url: string;
