@@ -1,4 +1,6 @@
-interface CardProps {
+import { HTMLAttributes } from "react";
+
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: JSX.Element | JSX.Element[];
   className?: string;
 }

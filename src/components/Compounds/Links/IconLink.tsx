@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { SVGIcon } from "../SVGIcon";
-import { Card } from "../../Atoms/Card";
 
 const DEFAULT_ICON_LINK_STYLE = [
   "p-1",

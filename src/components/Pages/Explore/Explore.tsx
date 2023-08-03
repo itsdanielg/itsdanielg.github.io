@@ -1,7 +1,5 @@
 import portrait from "../../../assets/portraitTransparent.png";
 import { HEADLINE } from "../../../text/headline";
-import { Card } from "../../Atoms/Card";
-import { HoverableImage } from "../../Compounds/HoverableImage";
 import { StaticImage } from "../../Compounds/StaticImage";
 import { TextCard } from "../../Compounds/TextCard";
 import { PageLayout } from "../PageLayout";

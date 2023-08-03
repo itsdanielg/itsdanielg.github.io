@@ -1,5 +1,5 @@
 import { useCourses } from "../../../hooks/useCourses";
-import { Card } from "../../Atoms/Card";
+import { Card } from "../../Atoms";
 import { LabelLink } from "../../Compounds/Links";
 import { SVGLogo } from "../../Compounds/SVGLogo";
 

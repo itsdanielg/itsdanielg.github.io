@@ -1,4 +1,4 @@
-import { Card } from "../Atoms/Card";
+import { Card } from "../Atoms";
 
 interface TextCardProps {
   text: string;
