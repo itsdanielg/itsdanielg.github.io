@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { useContact } from "../../../api/hooks/useContact";
-import { Button } from "../../Atoms";
-import { Loader } from "../../Atoms/Loader";
+import { Button, Loader } from "../../Atoms";
 import { StandardModal } from "../../Compounds/Modals/StandardModal";
 import { ContactInput, ContactTextArea } from "./ContactInput";
 
