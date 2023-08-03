@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Error, Home, Overview, Projects } from "./Pages";
 
 export function AppRoutes() {
