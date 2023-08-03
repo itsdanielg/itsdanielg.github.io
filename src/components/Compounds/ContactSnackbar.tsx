@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Snackbar } from "../Atoms/Snackbar";
+import { Snackbar } from "../Atoms";
 
 export type ContactSnackbarRef = {};
 
