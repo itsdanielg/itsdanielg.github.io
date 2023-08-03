@@ -1,4 +1,3 @@
-import { AnimatedLinkButton } from "../AnimatedButton";
 import { DemoButton, GithubButton } from "./ProjectBlockButton";
 
 interface ProjectDescriptionProps {

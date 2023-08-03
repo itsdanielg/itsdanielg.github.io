@@ -1,27 +1,28 @@
 import { useState } from "react";
-import { AnimatedButton } from "../../Compounds/AnimatedButton";
+import { Button } from "../../Atoms";
 import { ContactSnackbar } from "../../Compounds/ContactSnackbar";
 import { ContactModal } from "./ContactModal";
 
 export function Contact() {
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [showSnackbar, setShowSnackbar] = useState(false);
 
   return (
     <>
-      <AnimatedButton
+      <Button
         label="Contact"
-        onClick={() => setShow(true)}
+        animated
+        onClick={() => setShowModal(true)}
       />
       <ContactModal
-        show={show}
-        setShow={setShow}
+        show={showModal}
+        setShow={setShowModal}
         setShowSnackbar={setShowSnackbar}
       />
       <ContactSnackbar
+        label="Message sent!"
         showSnackbar={showSnackbar}
         setShowSnackbar={setShowSnackbar}
-        label="Message sent!"
       />
     </>
   );

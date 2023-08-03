@@ -41,8 +41,8 @@ module.exports = {
         "black-1-t": "rgba(38, 38, 38, 0.7);",
         "white-1": "rgb(218, 218, 218);",
         "white-1-t": "rgba(218, 218, 218, 0.7);",
-        blue: { DEFAULT: "rgb(68, 114, 196)" },
-        "blue-transparent": { DEFAULT: "rgba(68, 114, 196, 0.7)" }
+        blue: { DEFAULT: "hsl(218, 52%, 51.8%)" },
+        blueHover: { DEFAULT: "hsl(218, 52%, 65%)" }
       },
       fontFamily: {
         expletusSans: ["Expletus Sans", "cursive"]

@@ -1,4 +1,4 @@
-import { AnimatedLinkButton } from "../../AnimatedButton";
+import { LinkButton } from "../../../Atoms";
 
 interface ProjectBlockButtonProps {
   label: string;
@@ -8,9 +8,10 @@ interface ProjectBlockButtonProps {
 export function ProjectBlockButton({ to, label }: ProjectBlockButtonProps) {
   const disabled = to === "" ? true : false;
   return (
-    <AnimatedLinkButton
+    <LinkButton
       className={`text-sm`}
       disabled={disabled}
+      animated
       label={label}
       to={to}
       target

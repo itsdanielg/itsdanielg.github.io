@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { Button } from "../../Atoms";
 import { OverviewModal } from "./OverviewModal";
-import { AnimatedButton } from "../../Compounds/AnimatedButton";
 
 export function Overview() {
   const [show, setShow] = useState(false);
   return (
     <>
-      <AnimatedButton
+      <Button
         label="Overview"
+        animated
         onClick={() => setShow(true)}
       />
       <OverviewModal

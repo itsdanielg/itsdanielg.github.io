@@ -19,7 +19,7 @@ export function Toggle({
   className = "",
   ...props
 }: ToggleProps) {
-  const toggleStyle = isToggle ? "bg-blue-transparent text-white" : "bg-white";
+  const toggleStyle = isToggle ? "bg-blueHover text-white" : "bg-white";
 
   return (
     <button

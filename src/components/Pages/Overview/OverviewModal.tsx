@@ -1,7 +1,7 @@
-import { Dispatch, MouseEvent, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import portrait from "../../../assets/portrait.jpg";
 import { experiences, projects } from "../../../text";
-import { AnimatedLinkButton } from "../../Compounds/AnimatedButton";
+import { Button, LinkButton } from "../../Atoms";
 import { StaticImage } from "../../Compounds/StaticImage";
 import { Experiences } from "./Experiences";
 import { OverviewEducation } from "./OverviewEducation";
@@ -10,7 +10,6 @@ import { Projects } from "./Projects";
 import { TechStack } from "./TechStack";
 import { Contact } from "../Contact";
 import { StandardModal } from "../../Compounds/Modals/StandardModal";
-import { Button } from "../../Atoms/Button";
 
 interface OverviewModalProps {
   show: boolean;
@@ -34,9 +33,10 @@ export function OverviewModal({ show, setShow }: OverviewModalProps) {
           <Projects projects={[projects[0], projects[1], projects[3]]} />
           <TechStack />
           <div className="hidden md:flex gap-4 absolute bottom-0 right-0">
-            <AnimatedLinkButton
+            <LinkButton
               label="View All Projects"
               to="/projects"
+              animated
             />
             <Contact />
           </div>
@@ -48,9 +48,10 @@ export function OverviewModal({ show, setShow }: OverviewModalProps) {
           onClick={() => setShow(false)}
         />
         <div className="flex items-center gap-2 ml-auto">
-          <AnimatedLinkButton
+          <LinkButton
             label="View All Projects"
             to="/projects"
+            animated
           />
           <Contact />
         </div>

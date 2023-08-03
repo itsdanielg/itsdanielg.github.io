@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
+import { Button } from "../../../../Atoms";
 import { FilterTag } from "./FilterTag";
 import { FiltersModal } from "./FiltersModal";
-import { Button } from "../../../../Atoms/Button";
 
 interface FiltersProps {
   filters: string[];

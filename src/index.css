@@ -8,12 +8,12 @@
   }
 }
 
-body {
-  background-color: theme("colors.white-1");
-}
-
 * {
   font-family: "Catamaran", sans-serif;
+}
+
+body {
+  background-color: theme("colors.white-1");
 }
 
 ::-webkit-scrollbar {

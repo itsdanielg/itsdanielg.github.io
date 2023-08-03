@@ -1,10 +1,9 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Button } from "../../Atoms/Button";
+import { Dispatch, SetStateAction, useState } from "react";
+import { useContact } from "../../../api/hooks/useContact";
+import { Button } from "../../Atoms";
+import { Loader } from "../../Atoms/Loader";
 import { StandardModal } from "../../Compounds/Modals/StandardModal";
 import { ContactInput, ContactTextArea } from "./ContactInput";
-import { Loader } from "../../Atoms/Loader";
-import { emailMessage } from "../../../api/calls/emailMessage";
-import { useContact } from "../../../api/hooks/useContact";
 
 interface ContactModalProps {
   show: boolean;

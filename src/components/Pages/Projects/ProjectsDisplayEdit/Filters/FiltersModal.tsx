@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { technologies } from "../../../../../text";
-import { Button } from "../../../../Atoms/Button";
+import { Button } from "../../../../Atoms";
 import { StandardModal } from "../../../../Compounds/Modals/StandardModal";
 import { FiltersModalTechnologies } from "./FiltersModalTechnologies";
 
