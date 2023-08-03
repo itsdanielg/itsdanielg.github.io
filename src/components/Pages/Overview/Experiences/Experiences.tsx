@@ -1,5 +1,5 @@
 import { Experience } from "../../../../types";
-import { TooltipLink } from "../../../Compounds/Links";
+import { ImageTooltipLink } from "../../../Compounds/Links";
 import { ProfileTitle } from "../../../Compounds/ProfileTitle";
 import { ExperiencesRow } from "./ExperiencesRow";
 
@@ -15,7 +15,7 @@ export function Experiences({ experiences }: ExperiencesProps) {
         <div
           key={experience.location}
           className="">
-          <TooltipLink
+          <ImageTooltipLink
             name={experience.location}
             url={experience.url}
             imageUrl={"/svg/defmethod.svg"}
