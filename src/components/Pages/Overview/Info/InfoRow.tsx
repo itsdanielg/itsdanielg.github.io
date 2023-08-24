@@ -1,7 +1,6 @@
 import { contact } from "../../../../text/contact";
 import { Label } from "../../../Atoms";
-import { SVGIcon } from "../../../Compounds/SVGIcon";
-import { LabelLink } from "../../../Compounds/Links";
+import { Icon, LabelLink } from "../../../Compounds";
 
 export interface InfoRowProps {
   type: "email" | "github" | "linkedin";
@@ -10,7 +9,7 @@ export interface InfoRowProps {
 export function InfoRow({ type }: InfoRowProps) {
   return (
     <div className="flex items-center gap-2">
-      <SVGIcon fileName={type} />
+      <Icon fileName={type} />
       {type !== "email" ? (
         <LabelLink
           label={contact[type]}

@@ -1,5 +1,5 @@
 import { Technology } from "../../../../types";
-import { IconLink } from "../../../Compounds/Links";
+import { IconLink } from "../../../Compounds";
 
 interface TechStackRowProps {
   technologies: Technology[];
@@ -13,7 +13,6 @@ export function TechStackRow({ technologies }: TechStackRowProps) {
           key={technology.url + index}
           url={technology.url}
           svg={technology.svg}
-          width="w-10"
         />
       ))}
     </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SVGIcon } from "../SVGIcon";
+import { Icon } from "../";
 
 const DEFAULT_ICON_LINK_STYLE = [
   "p-1",
@@ -20,7 +20,7 @@ interface IconLinkProps {
   width?: string;
 }
 
-export function IconLink({ url, svg, width = "w-12", ...props }: IconLinkProps) {
+export function IconLink({ url, svg, width = "w-10", ...props }: IconLinkProps) {
   return (
     <Link
       {...props}
@@ -28,7 +28,7 @@ export function IconLink({ url, svg, width = "w-12", ...props }: IconLinkProps) 
       target="_blank"
       to={url}>
       <div className={`${DEFAULT_ICON_LINK_STYLE} bg-white rounded-lg`}>
-        <SVGIcon
+        <Icon
           fileName={svg}
           width={width}
         />
