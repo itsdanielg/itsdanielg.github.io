@@ -16,8 +16,8 @@ export function ProjectDescription({ show = false, name, github, demo, summary }
       <span className="text-xl text-center font-bold font-expletusSans">{name.toUpperCase()}</span>
       <span className="text-md text-center">{summary}</span>
       <div className="flex items-center justify-center gap-4 mt-auto">
-        <GithubButton to={github} />
         <DemoButton to={demo} />
+        <GithubButton to={github} />
       </div>
     </div>
   );
