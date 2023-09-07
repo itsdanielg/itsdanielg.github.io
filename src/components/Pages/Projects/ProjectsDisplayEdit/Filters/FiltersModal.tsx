@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { technologies } from "../../../../../text";
 import { Button } from "../../../../Atoms";
 import { StandardModal } from "../../../../Compounds/Modals/StandardModal";
@@ -13,6 +13,10 @@ interface FiltersModalProps {
 
 export function FiltersModal({ show, filters, setShow, setFilters }: FiltersModalProps) {
   const [selectedFilters, setSelectedFilters] = useState(filters);
+
+  useEffect(() => {
+    setSelectedFilters(filters);
+  }, [filters]);
 
   const addFilters = () => {
     setFilters(selectedFilters);
