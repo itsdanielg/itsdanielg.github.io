@@ -40,4 +40,45 @@ type Technology = {
   isFilter: boolean;
 };
 
-export { APIReturn, Course, Experience, Project, Technology };
+type pngFile =
+  | "c4me"
+  | "city"
+  | "organ"
+  | "portfolio"
+  | "portrait"
+  | "portraitTransparent"
+  | "speedbot"
+  | "spotifysorter";
+
+type svgFile =
+  | "audacity"
+  | "blender"
+  | "csharp"
+  | "css"
+  | "defmethod"
+  | "email"
+  | "git"
+  | "github"
+  | "grid"
+  | "html"
+  | "java"
+  | "javascript"
+  | "jquery"
+  | "linkedin"
+  | "list"
+  | "nodejs"
+  | "phaser"
+  | "photoshop"
+  | "python"
+  | "react"
+  | "sbu"
+  | "sql"
+  | "tailwindcss"
+  | "typescript"
+  | "unity"
+  | "vite"
+  | "web";
+
+type Asset = PNG | SVG;
+
+export { APIReturn, Course, Experience, Project, Technology, pngFile, svgFile, Asset };

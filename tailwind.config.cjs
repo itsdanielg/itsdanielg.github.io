@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -42,7 +43,8 @@ module.exports = {
         "white-1": "rgb(218, 218, 218);",
         "white-1-t": "rgba(218, 218, 218, 0.7);",
         blue: { DEFAULT: "hsl(218, 52%, 51.8%)" },
-        blueHover: { DEFAULT: "hsl(218, 52%, 65%)" }
+        blueHover: { DEFAULT: "hsl(218, 52%, 65%)" },
+        transparent: "rgba(0, 0, 0, 0.0);"
       },
       fontFamily: {
         expletusSans: ["Expletus Sans", "cursive"]

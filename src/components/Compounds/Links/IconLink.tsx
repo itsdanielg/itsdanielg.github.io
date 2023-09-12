@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "../";
+import { Asset } from "@/types";
 
 const DEFAULT_ICON_LINK_STYLE = [
   "p-1",
@@ -16,7 +17,7 @@ const DEFAULT_ICON_LINK_STYLE = [
 
 interface IconLinkProps {
   url: string;
-  svg: string;
+  svg: Asset;
   width?: string;
 }
 
@@ -27,7 +28,7 @@ export function IconLink({ url, svg, width = "w-10", ...props }: IconLinkProps) 
       className=""
       target="_blank"
       to={url}>
-      <div className={`${DEFAULT_ICON_LINK_STYLE} bg-white rounded-lg`}>
+      <div className={`${DEFAULT_ICON_LINK_STYLE} flex items-center gap-2 bg-white rounded-lg`}>
         <Icon
           fileName={svg}
           width={width}

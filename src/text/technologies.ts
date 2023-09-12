@@ -52,7 +52,7 @@ export const technologies = {
     {
       label: "SQL",
       url: "https://www.mysql.com/",
-      svg: "sqllogo",
+      svg: "sql",
       isSkill: true,
       isFilter: true
     }

@@ -1,8 +1,9 @@
-import { Toggle } from "../../../../Atoms";
+import { svgFile } from "@/types";
+import { IconToggle } from "@/components/Compounds";
 
 interface FiltersModalToggle {
   isToggle: boolean;
-  svg: string;
+  svg: svgFile;
   label: string;
   addFilter: (label: string) => void;
   removeFilter: (label: string) => void;
@@ -10,7 +11,7 @@ interface FiltersModalToggle {
 
 export function FiltersModalToggle({ isToggle, svg, label, addFilter, removeFilter }: FiltersModalToggle) {
   return (
-    <Toggle
+    <IconToggle
       className="p-2"
       isToggle={isToggle}
       svg={svg}
