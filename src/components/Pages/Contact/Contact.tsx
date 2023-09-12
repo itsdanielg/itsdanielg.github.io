@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button } from "../../Atoms";
-import { ContactSnackbar } from "../../Compounds/ContactSnackbar";
+import { Button } from "Atoms/";
 import { ContactModal } from "./ContactModal";
+import { ContactSnackbar } from "./ContactSnackbar";
 
 export function Contact() {
   const [showModal, setShowModal] = useState(false);

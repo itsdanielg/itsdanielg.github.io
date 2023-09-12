@@ -1,4 +1,4 @@
-import { svgFile } from "@/types";
+import { svgFile } from "Types/";
 import { Toggle, ToggleProps } from "Atoms/";
 import { Icon } from "Compounds/";
 

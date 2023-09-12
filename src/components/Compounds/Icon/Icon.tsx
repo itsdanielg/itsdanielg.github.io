@@ -1,6 +1,6 @@
+import { SVG } from "Assets/";
+import { svgFile } from "Types/";
 import { Image } from "Atoms/";
-import { SVG } from "@/assets";
-import { svgFile } from "@/types";
 
 export interface IconProps {
   fileName: svgFile;

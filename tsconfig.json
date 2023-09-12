@@ -18,10 +18,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "Assets": ["src/assets/"],
-      "Atoms/": ["src/components/Atoms/"],
-      "Compounds/": ["src/components/Compounds/", "./src/components/Compounds/*"],
-      "Types/": ["src/types/"]
+      "Assets/*": ["src/assets/", "src/assets/*"],
+      "Atoms/*": ["src/components/Atoms/", "src/components/Atoms/*"],
+      "Compounds/*": ["src/components/Compounds/", "./src/components/Compounds/*"],
+      "Templates/*": ["src/components/Templates/", "./src/components/Templates/*"],
+      "Pages/*": ["src/components/Pages/", "./src/components/Pages/*"],
+      "Text/*": ["src/text/", "src/text/*"],
+      "Types/*": ["src/types/", "src/types/*"]
     }
   },
   "include": ["src"],

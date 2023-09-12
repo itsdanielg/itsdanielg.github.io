@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Error, Home, Overview, Projects } from "./Pages";
+import { Error, Landing, Overview, Projects } from "./Pages";
 
 export function AppRoutes() {
   return (
@@ -7,15 +7,11 @@ export function AppRoutes() {
       <Routes>
         <Route
           path="/"
-          element={<Home />}></Route>
+          element={<Landing />}></Route>
         <Route
           path="/overview"
           element={<Overview />}
         />
-        {/* <Route
-        path="/explore"
-        element={<Explore />}
-      /> */}
         <Route
           path="/projects"
           element={<Projects />}

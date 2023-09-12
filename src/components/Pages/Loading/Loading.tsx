@@ -1,4 +1,4 @@
-import { Loader } from "../../Atoms";
+import { Loader } from "Atoms/";
 
 export function Loading() {
   return (
