@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 import { Label } from "@/components/Atoms";
 
 interface LabelLinkProps {
   label: string;
   url: string;
-  size?: string;
+  className?: string;
 }
 
-export function LabelLink({ label, url, size = "", ...props }: LabelLinkProps) {
+export function LabelLink({ label, url, className = "", ...props }: LabelLinkProps) {
   return (
     <Link
       {...props}
@@ -15,7 +16,7 @@ export function LabelLink({ label, url, size = "", ...props }: LabelLinkProps) {
       target="_blank"
       to={url}>
       <Label
-        className={`${size} text-blue`}
+        className={twMerge(className)}
         label={label}
       />
     </Link>

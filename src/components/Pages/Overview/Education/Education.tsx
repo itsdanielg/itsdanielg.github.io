@@ -9,8 +9,8 @@ export function Education() {
   return (
     <Card className="flex flex-col items-start gap-6 w-full md:mt-auto p-4">
       <Icon
-        name="sbu"
-        width="w-36 md:w-full"
+        className="w-36 md:w-full"
+        asset="sbu"
         isRectangle
       />
       <div className="flex flex-col">
@@ -20,7 +20,7 @@ export function Education() {
             key={course.name}
             label={course.name}
             url={course.url}
-            size="text-md"
+            className="text-md"
           />
         ))}
       </div>

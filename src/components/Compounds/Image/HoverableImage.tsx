@@ -1,20 +1,23 @@
 import { IMAGE_ASSET } from "@/assets";
 import { Image_File } from "@/types";
 import { Image } from "@/components/Atoms";
+import { twMerge } from "tailwind-merge";
 
 interface HoverableImageProps {
-  name: Image_File;
-  width?: string;
+  asset: Image_File;
   isSquare?: boolean;
+  className?: string;
 }
 
-export function HoverableImage({ name, width = "w-80", isSquare = true, ...props }: HoverableImageProps) {
+export function HoverableImage({ asset, isSquare = true, className = "", ...props }: HoverableImageProps) {
+  const squareStyle = isSquare ? "aspect-square" : "";
+
   return (
-    <div className={`${width} ${isSquare ? "aspect-square" : ""}`}>
+    <div className={twMerge("w-full", squareStyle, className)}>
       <Image
         {...props}
         className="transition-all duration-500 md:hover:scale-110"
-        src={IMAGE_ASSET[name]}
+        src={IMAGE_ASSET[asset]}
       />
     </div>
   );

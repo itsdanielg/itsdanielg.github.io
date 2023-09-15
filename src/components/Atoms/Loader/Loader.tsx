@@ -1,10 +1,17 @@
+import { twMerge } from "tailwind-merge";
+
 interface LoaderProps {
-  width?: string;
+  size: "snackbar" | "page";
 }
 
-export function Loader({ width = "w-32" }: LoaderProps) {
+const WIDTH = {
+  snackbar: "w-12",
+  page: "w-36"
+};
+
+export function Loader({ size }: LoaderProps) {
   return (
-    <div className={`${width} aspect-square`}>
+    <div className={twMerge("aspect-square", WIDTH[size])}>
       <div role="status">
         <svg
           aria-hidden="true"

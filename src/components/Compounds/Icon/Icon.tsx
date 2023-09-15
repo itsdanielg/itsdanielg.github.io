@@ -1,18 +1,19 @@
+import { twMerge } from "tailwind-merge";
 import { SVG_ASSET } from "@/assets";
 import { SVG_File } from "@/types";
 import { Image } from "@/components/Atoms";
 
 export interface IconProps {
   asset: SVG_File;
-  width?: string;
   isRectangle?: boolean;
+  className?: string;
 }
 
-export function Icon({ asset, width = "w-6", isRectangle = false }: IconProps) {
-  const rectangleStyle = isRectangle ? "h-auto" : "aspect-square";
+export function Icon({ asset, isRectangle = false, className = "" }: IconProps) {
+  const rectangleStyle = isRectangle ? "w-full h-auto" : "w-5 aspect-square";
 
   return (
-    <div className={`${width} ${rectangleStyle}`}>
+    <div className={twMerge(rectangleStyle, className)}>
       <Image
         src={SVG_ASSET[asset]}
         alt={asset}

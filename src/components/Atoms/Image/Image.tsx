@@ -1,4 +1,5 @@
 import { ImgHTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -9,7 +10,7 @@ export function Image({ src, className = "", ...props }: ImageProps) {
   return (
     <img
       {...props}
-      className={`${className} object-contain w-full h-full select-none`}
+      className={twMerge("object-contain w-full h-full select-none", className)}
       src={src}
     />
   );

@@ -1,5 +1,5 @@
 import { Experience } from "@/types";
-import { BorderedLabel, IconTooltipLink } from "@/components/Compounds";
+import { BorderedLabel, LabelLink } from "@/components/Compounds";
 import { ExperiencesRow } from "./ExperiencesRow";
 
 interface ExperiencesProps {
@@ -11,13 +11,11 @@ export function Experiences({ experiences }: ExperiencesProps) {
     <div className="flex flex-col items-start gap-2">
       <BorderedLabel label="experience" />
       {experiences.map((experience) => (
-        <div
-          key={experience.location}
-          className="">
-          <IconTooltipLink
-            name="defmethod"
-            url={experience.url}
+        <div key={experience.location}>
+          <LabelLink
+            className="text-lg"
             label={experience.location}
+            url={experience.url}
           />
           {experience.positions.map((position, index) => (
             <ExperiencesRow

@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes } from "react";
 import { Link } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 
-const DEFAULT_BUTTON_STYLE = ["p-2", "rounded-md", "transition-all", "duration-300"].join(" ");
-const DEFAULT_BUTTON_DISABLED_STYLE = ["opacity-50", "select-none", "pointer-events-none"].join(" ");
-const DEFAULT_BUTTON_NON_ANIMATED_STYLE = ["bg-blue", "text-white", "md:hover:bg-blueHover"].join(" ");
+const DEFAULT_BUTTON_STYLE = ["p-2", "rounded-md", "transition-all", "duration-300"];
+const DEFAULT_BUTTON_DISABLED_STYLE = ["opacity-50", "select-none", "pointer-events-none"];
+const DEFAULT_BUTTON_NON_ANIMATED_STYLE = ["bg-blue", "text-white", "md:hover:bg-blueHover"];
 const DEFAULT_BUTTON_ANIMATED_STYLE = [
   "bg-white",
   "bg-gradient-to-r",
@@ -15,7 +16,7 @@ const DEFAULT_BUTTON_ANIMATED_STYLE = [
   "md:hover:bg-white",
   "md:hover:[background-size:100%_100%]",
   "md:hover:text-white"
-].join(" ");
+];
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string | JSX.Element | JSX.Element[];
@@ -31,7 +32,7 @@ export function Button({ children, disabled = false, animated = false, className
   return (
     <button
       {...props}
-      className={`${className} ${disabledStyle} ${animatedStyle} ${DEFAULT_BUTTON_STYLE}`}
+      className={twMerge(disabledStyle, animatedStyle, DEFAULT_BUTTON_STYLE, className)}
       disabled={disabled}>
       {children}
     </button>
@@ -60,7 +61,7 @@ export function LinkButton({
 
   return (
     <Link
-      className={`${className} ${disabledStyle} ${animatedStyle} ${DEFAULT_BUTTON_STYLE}`}
+      className={twMerge(disabledStyle, animatedStyle, DEFAULT_BUTTON_STYLE, className)}
       target={target ? "_blank" : ""}
       to={to}>
       {children}

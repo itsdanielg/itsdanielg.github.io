@@ -9,8 +9,8 @@ export function Landing() {
     <div className="flex items-center justify-center h-full">
       <div className="flex flex-col md:flex-row items-center gap-4 p-12">
         <HoverableImage
-          name="portraitTransparent"
-          width="md:w-[26rem]"
+          className="md:w-[26rem]"
+          asset="portraitTransparent"
         />
         <div className="flex flex-col items-center md:items-start gap-8">
           <div className="flex flex-col text-center md:text-left">

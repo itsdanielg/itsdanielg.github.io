@@ -9,7 +9,7 @@ export interface InfoRowProps {
 export function InfoRow({ type }: InfoRowProps) {
   return (
     <div className="flex items-center gap-2">
-      <Icon name={type} />
+      <Icon asset={type} />
       {type !== "email" ? (
         <LabelLink
           label={contact[type]}

@@ -1,21 +1,26 @@
 import { Link } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 import { SVG_File } from "@/types";
+import { Label } from "@/components/Atoms";
 import { IconTooltip } from "@/components/Compounds";
 
 interface IconTooltipLink {
   asset: SVG_File;
   url: string;
   label: string;
+  className?: string;
 }
 
-export function IconTooltipLink({ asset, url, label }: IconTooltipLink) {
+export function IconTooltipLink({ asset, url, label, className = "" }: IconTooltipLink) {
   return (
     <IconTooltip asset={asset}>
       <Link
-        className="text-blue text-lg"
         target="_blank"
         to={url}>
-        {label}
+        <Label
+          className={twMerge("text-lg", className)}
+          label={label}
+        />
       </Link>
     </IconTooltip>
   );

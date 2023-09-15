@@ -1,4 +1,5 @@
 import { HTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: JSX.Element | JSX.Element[];
@@ -9,7 +10,7 @@ export function Card({ children, className = "", ...props }: CardProps) {
   return (
     <div
       {...props}
-      className={`${className} bg-white rounded-md shadow-xl`}>
+      className={twMerge("bg-white rounded-md shadow-xl", className)}>
       {children}
     </div>
   );

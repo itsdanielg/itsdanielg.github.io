@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import ReactDOM from "react-dom";
+import { twMerge } from "tailwind-merge";
 
 const DEFAULT_SNACKBAR_STYLE = [
   "absolute",
@@ -11,7 +12,7 @@ const DEFAULT_SNACKBAR_STYLE = [
   "items-center",
   "justify-center",
   "rounded-lg"
-].join(" ");
+];
 
 interface SnackbarProps extends HTMLAttributes<HTMLDivElement> {
   children: JSX.Element | JSX.Element[];
@@ -24,7 +25,7 @@ export function Snackbar({ children, className = "", ...props }: SnackbarProps) 
   return ReactDOM.createPortal(
     <div
       {...props}
-      className={`${className} ${DEFAULT_SNACKBAR_STYLE}`}>
+      className={twMerge(DEFAULT_SNACKBAR_STYLE, className)}>
       {children}
     </div>,
     snackbarDiv

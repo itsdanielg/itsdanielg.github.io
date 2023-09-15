@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import ReactDOM from "react-dom";
+import { twMerge } from "tailwind-merge";
 
 interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   show: boolean;
@@ -18,7 +19,10 @@ export function Modal({ show, children, root = "modal", className = "", ...props
       {...props}
       className={`${backgroundTransition} fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-black-1-t transition-all duration-300`}>
       <div
-        className={`${className} ${modalTransition} rounded-none md:rounded-lg bg-white-1 transition-all duration-300`}
+        className={twMerge(
+          `${modalTransition} rounded-none md:rounded-lg bg-white-1 transition-all duration-300`,
+          className
+        )}
         onClick={(e: any) => e.stopPropagation()}>
         {children}
       </div>
