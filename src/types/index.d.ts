@@ -23,11 +23,11 @@ type Position = {
 
 type Project = {
   name: string;
-  fileName: string;
+  asset: Image_File;
   github: string;
   demo: string;
   date: string;
-  skills: string[];
+  technologies: string[];
   summary: string;
   description: string[];
 };
@@ -35,12 +35,12 @@ type Project = {
 type Technology = {
   label: string;
   url: string;
-  svg: string;
+  asset: SVG_File;
   isSkill: boolean;
   isFilter: boolean;
 };
 
-type pngFile =
+type Image_File =
   | "c4me"
   | "city"
   | "organ"
@@ -50,7 +50,7 @@ type pngFile =
   | "speedbot"
   | "spotifysorter";
 
-type svgFile =
+type SVG_File =
   | "audacity"
   | "blender"
   | "csharp"
@@ -79,6 +79,4 @@ type svgFile =
   | "vite"
   | "web";
 
-type Asset = PNG | SVG;
-
-export { APIReturn, Course, Experience, Project, Technology, pngFile, svgFile, Asset };
+export { APIReturn, Course, Experience, Project, Technology, Image_File, SVG_File };

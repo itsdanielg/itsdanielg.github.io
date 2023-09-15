@@ -1,4 +1,6 @@
-export const courses = [
+import { Course } from "@/types";
+
+export const courses: Course[] = [
   {
     name: "CSE 416: Software Engineering",
     url: "https://www.cs.stonybrook.edu/students/Undergraduate-Studies/courses/CSE416",

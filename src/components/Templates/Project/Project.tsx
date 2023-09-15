@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useProject } from "../../../api/hooks/useProject";
-import { Image } from "../../Atoms";
-import { HoverableVideo } from "../HoverableVideo";
+import { Image_File } from "@/types";
 import { ProjectDescription } from "./ProjectDescription";
 import { ProjectSlideshow } from "./ProjectSlideshow";
+import { StaticImage } from "@/components/Compounds";
 
 const DEFAULT_PROJECT_BLOCK_STYLE = [
   "w-full",
@@ -19,7 +18,7 @@ const DEFAULT_PROJECT_BLOCK_STYLE = [
 type ProjectBlockProps =
   | {
       showVideo: true;
-      fileName: string;
+      image: Image_File;
       name?: string;
       github?: string;
       demo?: string;
@@ -27,7 +26,7 @@ type ProjectBlockProps =
     }
   | {
       showVideo: false;
-      fileName: string;
+      image: Image_File;
       name: string;
       github: string;
       demo: string;
@@ -36,33 +35,29 @@ type ProjectBlockProps =
 
 export function ProjectBlock({
   showVideo = false,
-  fileName,
+  image,
   name = "",
   github = "",
   demo = "",
   summary = ""
 }: ProjectBlockProps) {
-  const { thumbnail, video } = useProject(fileName);
-
-  if (showVideo) {
-    return (
-      <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
-        <ProjectSlideshow image={thumbnail} />
-      </div>
-    );
-  }
-
   const [show, setShow] = useState(false);
+  // const { thumbnail, video } = useProject(fileName);
+
+  // if (showVideo) {
+  //   return (
+  //     <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
+  //       <ProjectSlideshow name={thumbnail} />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div
       className={`${DEFAULT_PROJECT_BLOCK_STYLE} overflow-hidden relative group`}
       onMouseOver={() => setShow(true)}
       onMouseOut={() => setShow(false)}>
-      <Image
-        className="object-cover"
-        src={thumbnail}
-      />
+      <StaticImage name={image} />
       <ProjectDescription
         show={show}
         name={name}

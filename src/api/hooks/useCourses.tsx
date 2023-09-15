@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { courses } from "../text/courses";
-import { Course } from "../types";
+import { courses } from "@/text";
+import { Course } from "@/types";
 
 export function useCourses(coursesToShow?: number[]) {
   const [visibleCourses, setVisibleCourses] = useState<Course[]>([]);

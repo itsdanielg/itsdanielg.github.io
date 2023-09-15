@@ -1,5 +1,5 @@
-import { Project } from "../../../../types";
-import { ProjectBlock } from "../../../Compounds/ProjectBlock";
+import { Image_File, Project } from "@/types";
+import { ProjectBlock } from "@/components/Templates";
 import { ProjectList } from "./ProjectList";
 
 interface ProjectsDisplayProps {
@@ -15,7 +15,7 @@ export function ProjectsDisplay({ projects, isGrid }: ProjectsDisplayProps) {
           <ProjectBlock
             key={project.name + index}
             showVideo={false}
-            fileName={project.fileName}
+            image={project.fileName as Image_File}
             name={project.name}
             github={project.github}
             demo={project.demo}
@@ -31,7 +31,7 @@ export function ProjectsDisplay({ projects, isGrid }: ProjectsDisplayProps) {
         <ProjectList
           key={project.name + index}
           name={project.name}
-          fileName={project.fileName}
+          fileName={project.fileName as Image_File}
           github={project.github}
           demo={project.demo}
           description={project.description}

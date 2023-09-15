@@ -1,4 +1,4 @@
-import { SVG_File, Technology } from "@/types";
+import { Technology } from "@/types";
 import { IconLink } from "@/components/Compounds";
 
 interface TechStackRowProps {
@@ -8,11 +8,11 @@ interface TechStackRowProps {
 export function TechStackRow({ technologies }: TechStackRowProps) {
   return (
     <div className="flex flex-wrap items-center gap-4">
-      {technologies.map((technology, index) => (
+      {technologies.map(({ url, asset }, index) => (
         <IconLink
-          key={technology.url + index}
-          url={technology.url}
-          name={technology.svg as SVG_File}
+          key={url + index}
+          url={url}
+          asset={asset}
         />
       ))}
     </div>

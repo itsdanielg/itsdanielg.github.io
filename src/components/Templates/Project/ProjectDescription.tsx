@@ -1,4 +1,4 @@
-import { DemoButton, GithubButton } from "./ProjectBlockButton";
+import { DemoButton, GithubButton } from "./ProjectButton";
 
 interface ProjectDescriptionProps {
   show: boolean;

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { technologies } from "../../../../../text";
-import { Button } from "../../../../Atoms";
-import { StandardModal } from "../../../../Compounds/Modals/StandardModal";
+import { technologies } from "@/text";
+import { Button } from "@/components/Atoms";
+import { StandardModal } from "@/components/Compounds";
 import { FiltersModalTechnologies } from "./FiltersModalTechnologies";
 
 interface FiltersModalProps {
@@ -49,12 +49,12 @@ export function FiltersModal({ show, filters, setShow, setFilters }: FiltersModa
       </div>
       <div className="flex justify-end w-full p-6 border-t-2 md:border-none">
         <Button
-          label="Set Filters"
           onClick={() => {
             addFilters();
             setShow(false);
-          }}
-        />
+          }}>
+          Set Filters
+        </Button>
       </div>
     </StandardModal>
   );

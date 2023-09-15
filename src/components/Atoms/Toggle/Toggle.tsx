@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 
-interface ToggleProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ToggleProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isToggle: boolean;
   className?: string;
   children?: JSX.Element | JSX.Element[];

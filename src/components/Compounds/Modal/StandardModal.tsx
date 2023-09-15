@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Modal } from "../../Atoms";
+import { Modal } from "@/components/Atoms";
 
 interface StandardModalProps {
   show: boolean;

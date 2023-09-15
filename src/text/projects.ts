@@ -1,31 +1,33 @@
-export const projects = [
-  {
-    name: "Portfolio",
-    fileName: "portfolio",
-    github: "https://github.com/itsdanielg/itsdanielg.github.io",
-    demo: "",
-    date: "November 2017 - Present",
-    skills: ["TypeScript", "React", "Tailwind CSS", "Vite"],
-    summary: "My personal website. Includes a portfolio of my most recent works.",
-    description: ["My personal website", "Includes a portfolio of my most recent works"]
-  },
+import { Project } from "@/types";
+
+export const projects: Project[] = [
+  // {
+  //   name: "Portfolio",
+  //   asset: "portfolio",
+  //   github: "https://github.com/itsdanielg/itsdanielg.github.io",
+  //   demo: "",
+  //   date: "November 2017 - Present",
+  //   technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
+  //   summary: "My personal website. Includes a portfolio of my most recent works.",
+  //   description: ["My personal website", "Includes a portfolio of my most recent works"]
+  // },
   {
     name: "Spotify Sorter",
-    fileName: "spotifysorter",
+    asset: "spotifysorter",
     github: "",
     demo: "",
     date: "October 2022 - Present",
-    skills: ["TypeScript", "React", "Tailwind CSS", "Vite", "Spotify Web API"],
+    technologies: ["TypeScript", "React", "Tailwind CSS", "Vite", "Spotify Web API"],
     summary: "Web application that sorts a user's spotify playlist based on selected attributes.",
     description: ["Web application that sorts a user's spotify playlist based on selected attributes"]
   },
   // {
   //   name: "FOUND:IT",
-  //   fileName: "foundit",
+  //   asset: "foundit",
   //   github: "https://github.com/itsdanielg/c4me",
   //   demo: "https://danieljedrylgarcia.me/found-it/#/",
   //   date: "October 2021 - Present",
-  //   skills: ["JavaScript", "React", "Express", "SQL"],
+  //   technologies: ["JavaScript", "React", "Express", "SQL"],
   //   summary: "Inventory tracker that records and searches for the appearance and last seen details of certain items.",
   //   description: [
   //     "A simple inventory tracker that records and searches for the appearance, location, and last seen details of certain items",
@@ -34,25 +36,26 @@ export const projects = [
   // },
   {
     name: "c4me: College 4 Me",
-    fileName: "c4me",
+    asset: "c4me",
     github: "https://github.com/itsdanielg/c4me",
     demo: "https://itsdanielg.github.io/c4me/#/",
     date: "January 2020 - May 2020",
-    skills: ["JavaScript", "Java", "SQL", "React", "jQuery", "Java Servlets"],
+    technologies: ["JavaScript", "Java", "SQL", "React", "jQuery", "Java Servlets"],
     summary:
       "Assists upcoming undergraduate students' college planning through a recommendation of colleges and universities based on documented grades and test scores.",
     description: [
       "Full-stack web application that assists upcoming undergraduate students on their college planning through a recommendation of colleges and universities based on documented grades and test scores",
+      "Collaborated within a team of 4 engineering students where I was responsible for a majority of the front-end development and UI/UX design",
       "Served as the final group project for the Software Engineering course over the Spring 2020 semester, where I was responsible for a majority of the front-end and UI/UX design"
     ]
   },
   {
     name: "Boardwalk Hall Auditorium Organ",
-    fileName: "organ",
+    asset: "organ",
     github: "https://github.com/itsdanielg/Virtual-Organ-Project/releases/",
     demo: "https://boardwalk-hall-organ.firebaseapp.com/",
     date: "January 2020 - May 2020",
-    skills: ["C#", "Unity", "Blender", "Photoshop", "Audacity"],
+    technologies: ["C#", "Unity", "Blender", "Photoshop", "Audacity"],
     summary: "3D-Simulator of a pipe organ based on the real-life instrument found in the Boardwalk Hall Auditorium.",
     description: [
       "3D-Simulator of a pipe organ based on the real-life instrument found in the Boardwalk Hall Auditorium located in Atlantic City, NJ",
@@ -62,11 +65,11 @@ export const projects = [
   },
   {
     name: "Speedbot",
-    fileName: "speedbot",
+    asset: "speedbot",
     github: "https://github.com/itsdanielg/CSE-381-Group-Project/releases",
     demo: "https://speed-bot.firebaseapp.com/",
     date: "August 2019 - May 2020",
-    skills: ["C#", "Unity", "Blender", "Photoshop", "Audacity"],
+    technologies: ["C#", "Unity", "Blender", "Photoshop", "Audacity"],
     summary:
       "3D-Platform game in which the player must navigate through various obstacles, powerups, and enemies to complete each level as fast as possible.",
     description: [
@@ -76,12 +79,15 @@ export const projects = [
   },
   {
     name: "The Tail of a City",
-    fileName: "city",
+    asset: "city",
     github: "https://github.com/itsdanielg/CSE-380-Group-Project",
     demo: "https://the-tail-of-a-city.firebaseapp.com/",
     date: "January 2019 - May 2019",
-    skills: ["JavaScript", "Phaser", "Photoshop", "Audacity"],
+    technologies: ["JavaScript", "Phaser", "Photoshop", "Audacity"],
     summary: "2D-Adventure game where the player must complete certain quests in each level as a playable dog.",
-    description: ["2D-Adventure game where the player must complete certain quests in each level as a playable dog"]
+    description: [
+      "2D-Adventure game where the player must complete certain quests in each level as a playable dog",
+      "Collaborated within a team of 3 engineering students where I was responsible for the gameplay objective and logic"
+    ]
   }
 ];

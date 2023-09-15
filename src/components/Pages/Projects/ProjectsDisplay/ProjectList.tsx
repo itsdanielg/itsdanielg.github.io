@@ -1,9 +1,10 @@
-import { ProjectBlock } from "../../../Compounds/ProjectBlock";
+import { ProjectBlock } from "@/components/Templates";
 import { ProjectListDescription } from "./ProjectListDescription";
+import { Image_File } from "@/types";
 
 interface ProjectListProps {
   name: string;
-  fileName: string;
+  fileName: Image_File;
   github: string;
   demo: string;
   description: string[];
@@ -20,7 +21,7 @@ export function ProjectList({ name, fileName, github, demo, description, ...prop
       />
       <ProjectBlock
         showVideo={true}
-        fileName={fileName}
+        image={fileName}
       />
     </div>
   );

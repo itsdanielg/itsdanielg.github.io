@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import { Button } from "../../../../Atoms";
+import { Button } from "@/components/Atoms";
 import { FilterTag } from "./FilterTag";
 import { FiltersModal } from "./FiltersModal";
 
@@ -32,9 +32,9 @@ export function Filters({ filters, setFilters }: FiltersProps) {
         ))}
         <Button
           className="md:hover:text-white transition"
-          label="Add Filter"
-          onClick={() => setShow(true)}
-        />
+          onClick={() => setShow(true)}>
+          Add Filter
+        </Button>
         <FiltersModal
           show={show}
           filters={filters}

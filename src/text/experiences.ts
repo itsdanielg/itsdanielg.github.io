@@ -1,4 +1,6 @@
-export const experiences = [
+import { Experience } from "@/types";
+
+export const experiences: Experience[] = [
   {
     location: "Def Method",
     url: "https://www.defmethod.com/",

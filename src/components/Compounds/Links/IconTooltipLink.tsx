@@ -3,14 +3,14 @@ import { SVG_File } from "@/types";
 import { IconTooltip } from "@/components/Compounds";
 
 interface IconTooltipLink {
-  name: SVG_File;
+  asset: SVG_File;
   url: string;
   label: string;
 }
 
-export function IconTooltipLink({ name, url, label }: IconTooltipLink) {
+export function IconTooltipLink({ asset, url, label }: IconTooltipLink) {
   return (
-    <IconTooltip name={name}>
+    <IconTooltip asset={asset}>
       <Link
         className="text-blue text-lg"
         target="_blank"

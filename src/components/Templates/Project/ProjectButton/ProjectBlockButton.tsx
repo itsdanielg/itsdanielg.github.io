@@ -1,4 +1,4 @@
-import { LinkButton } from "../../../Atoms";
+import { LinkButton } from "@/components/Atoms";
 
 interface ProjectBlockButtonProps {
   label: string;
@@ -12,9 +12,9 @@ export function ProjectBlockButton({ to, label }: ProjectBlockButtonProps) {
       className={`text-sm`}
       disabled={disabled}
       animated
-      label={label}
       to={to}
-      target
-    />
+      target>
+      {label}
+    </LinkButton>
   );
 }

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { projects } from "../../../text";
-import { PageLayout } from "../PageLayout";
+import { projects } from "@/text";
+import { PageLayout } from "@/components/Templates/";
 import { ProjectsDisplay } from "./ProjectsDisplay";
 import { ProjectsDisplayEdit } from "./ProjectsDisplayEdit";
-import { Outlet } from "react-router-dom";
 
 export function Projects() {
   const [filters, setFilters] = useState<string[]>([]);

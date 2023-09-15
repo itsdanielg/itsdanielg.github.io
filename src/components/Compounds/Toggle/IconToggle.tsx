@@ -1,16 +1,16 @@
-import { Toggle } from "@/components/Atoms";
+import { Toggle, ToggleProps } from "@/components/Atoms";
 import { Icon } from "../Icon";
 import { SVG_File } from "@/types";
 
-interface IconToggleProps {
+interface IconToggleProps extends ToggleProps {
   isToggle: boolean;
-  name: SVG_File;
+  asset: SVG_File;
   width?: string;
   label?: string;
   className?: string;
 }
 
-export function IconToggle({ isToggle, name, width = "w-5", label = "", className = "", ...props }: IconToggleProps) {
+export function IconToggle({ isToggle, asset, width = "w-5", label = "", className = "", ...props }: IconToggleProps) {
   return (
     <Toggle
       {...props}
@@ -18,7 +18,7 @@ export function IconToggle({ isToggle, name, width = "w-5", label = "", classNam
       isToggle={isToggle}>
       <div className="aspect-square ">
         <Icon
-          name={name}
+          asset={asset}
           width={width}
         />
       </div>

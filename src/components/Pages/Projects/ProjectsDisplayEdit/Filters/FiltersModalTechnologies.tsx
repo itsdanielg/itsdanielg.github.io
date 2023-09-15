@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { Technology } from "../../../../../types";
-import { ProfileTitle } from "../../../../Compounds/ProfileTitle";
+import { Technology } from "@/types";
+import { BorderedLabel } from "@/components/Compounds";
 import { FiltersModalToggle } from "./FiltersModalToggle";
 
 interface FiltersModalTechnologiesProps {
@@ -26,7 +26,7 @@ export function FiltersModalTechnologies({
 
   return (
     <div className="flex flex-col items-start gap-2">
-      <ProfileTitle label={title} />
+      <BorderedLabel label={title} />
       <div className="flex flex-wrap gap-2">
         {technologies
           .filter((technology) => technology.isFilter)

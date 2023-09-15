@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import { Filters } from "./Filters/Filters";
-import { IconToggle } from "Compounds/";
+import { IconToggle } from "@/components/Compounds";
+import { Filters } from "./Filters";
+
 interface ProjectsDisplayEditProps {
   filters: string[];
   isGrid: boolean;
@@ -18,12 +19,12 @@ export function ProjectsDisplayEdit({ filters, isGrid, setFilters, setIsGrid }: 
       <div className="flex gap-2">
         <IconToggle
           isToggle={isGrid}
-          svg="grid"
+          name="grid"
           onClick={() => setIsGrid(true)}
         />
         <IconToggle
           isToggle={!isGrid}
-          svg="list"
+          name="list"
           onClick={() => setIsGrid(false)}
         />
       </div>

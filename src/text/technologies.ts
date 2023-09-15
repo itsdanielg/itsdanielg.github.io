@@ -1,58 +1,66 @@
-export const technologies = {
+import { Technology } from "@/types";
+
+type technologies = {
+  languages: Technology[];
+  frameworks: Technology[];
+  software: Technology[];
+};
+
+export const technologies: technologies = {
   languages: [
     {
       label: "TypeScript",
       url: "https://www.typescriptlang.org/",
-      svg: "typescript",
+      asset: "typescript",
       isSkill: true,
       isFilter: true
     },
     {
       label: "JavaScript",
       url: "https://www.javascript.com/",
-      svg: "javascript",
+      asset: "javascript",
       isSkill: true,
       isFilter: true
     },
     {
       label: "HTML",
       url: "https://html.com/",
-      svg: "html",
+      asset: "html",
       isSkill: true,
       isFilter: false
     },
     {
       label: "CSS",
       url: "https://www.css3.info/",
-      svg: "css",
+      asset: "css",
       isSkill: true,
       isFilter: false
     },
     {
       label: "Python",
       url: "https://www.python.org/",
-      svg: "python",
+      asset: "python",
       isSkill: true,
       isFilter: true
     },
     {
       label: "Java",
       url: "https://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html",
-      svg: "java",
+      asset: "java",
       isSkill: true,
       isFilter: true
     },
     {
       label: "C#",
       url: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-      svg: "csharp",
+      asset: "csharp",
       isSkill: true,
       isFilter: true
     },
     {
       label: "SQL",
       url: "https://www.mysql.com/",
-      svg: "sql",
+      asset: "sql",
       isSkill: true,
       isFilter: true
     }
@@ -61,49 +69,49 @@ export const technologies = {
     {
       label: "React",
       url: "https://react.dev/",
-      svg: "react",
+      asset: "react",
       isSkill: true,
       isFilter: true
     },
     {
       label: "jQuery",
       url: "https://jquery.com/",
-      svg: "jquery",
+      asset: "jquery",
       isSkill: false,
       isFilter: true
     },
     {
       label: "Tailwind CSS",
       url: "https://tailwindcss.com/",
-      svg: "tailwindcss",
+      asset: "tailwindcss",
       isSkill: true,
       isFilter: true
     },
     {
       label: "Vite",
       url: "https://vitejs.dev/",
-      svg: "vite",
+      asset: "vite",
       isSkill: true,
       isFilter: true
     },
     {
       label: "Node.js",
       url: "https://nodejs.org/en",
-      svg: "nodejs",
+      asset: "nodejs",
       isSkill: true,
       isFilter: true
     },
     {
       label: "Phaser",
       url: "https://phaser.io/",
-      svg: "phaser",
+      asset: "phaser",
       isSkill: false,
       isFilter: true
     },
     {
       label: "Git",
       url: "https://git-scm.com/",
-      svg: "git",
+      asset: "git",
       isSkill: true,
       isFilter: false
     }
@@ -112,28 +120,28 @@ export const technologies = {
     {
       label: "Unity",
       url: "https://unity.com/",
-      svg: "unity",
+      asset: "unity",
       isSkill: true,
       isFilter: true
     },
     {
       label: "Blender",
       url: "https://www.blender.org/",
-      svg: "blender",
+      asset: "blender",
       isSkill: true,
       isFilter: true
     },
     {
       label: "Audacity",
       url: "https://www.audacityteam.org/",
-      svg: "audacity",
+      asset: "audacity",
       isSkill: false,
       isFilter: true
     },
     {
       label: "Photoshop",
       url: "https://www.adobe.com/products/photoshop.html",
-      svg: "photoshop",
+      asset: "photoshop",
       isSkill: false,
       isFilter: true
     }

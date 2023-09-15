@@ -7,7 +7,8 @@ export function AppRoutes() {
       <Routes>
         <Route
           path="/"
-          element={<Landing />}></Route>
+          element={<Landing />}
+        />
         <Route
           path="/overview"
           element={<Overview />}

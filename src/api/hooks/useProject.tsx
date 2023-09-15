@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Image_File } from "@/types";
 
-export function useProject(fileName: string) {
-  const [thumbnail, setThumbnail] = useState("");
-  const [slideshow, setSlideshow] = useState<String[]>([]);
+export function useProject(project: Image_File) {
+  const [thumbnail, setThumbnail] = useState<Image_File>(project);
+  const [slideshow, setSlideshow] = useState<string[]>([]);
   const [video, setVideo] = useState("");
 
   useEffect(() => {
-    setThumbnail(`/images/${fileName}.png`);
-    setVideo(`/videos/${fileName}.mp4`);
-  }, [fileName]);
+    setVideo(`/videos/${project}.mp4`);
+  }, [project]);
 
   return { thumbnail, video };
 }

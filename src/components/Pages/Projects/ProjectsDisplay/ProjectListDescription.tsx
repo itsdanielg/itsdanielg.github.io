@@ -1,4 +1,4 @@
-import { GithubButton, DemoButton } from "../../../Compounds/ProjectBlock/ProjectBlockButton";
+import { GithubButton, DemoButton } from "@/components/Templates/Project/ProjectButton";
 
 interface ProjectListDescriptionProps {
   name: string;
