@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import portrait from "../../../assets/portraitTransparent.png";
-import { StaticImage } from "../../Compounds/StaticImage";
-import { Contact, Overview } from "../../Pages";
+import { StaticImage } from "@/components/Compounds";
+import { Overview, Contact } from "@/components/Pages";
 
 export function Navigation() {
   return (
@@ -9,7 +8,7 @@ export function Navigation() {
       <Link to={"/"}>
         <div className="flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-blue transition-all">
           <StaticImage
-            url={portrait}
+            name="portrait"
             width="w-12 md:w-[3rem]"
           />
           <span>Daniel Garcia</span>

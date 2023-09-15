@@ -1,6 +1,5 @@
-import { Experience } from "../../../../types";
-import { ImageTooltipLink } from "../../../Compounds/Links";
-import { ProfileTitle } from "../../../Compounds/ProfileTitle";
+import { Experience } from "@/types";
+import { BorderedLabel, IconTooltipLink } from "@/components/Compounds";
 import { ExperiencesRow } from "./ExperiencesRow";
 
 interface ExperiencesProps {
@@ -10,15 +9,15 @@ interface ExperiencesProps {
 export function Experiences({ experiences }: ExperiencesProps) {
   return (
     <div className="flex flex-col items-start gap-2">
-      <ProfileTitle label="experience" />
+      <BorderedLabel label="experience" />
       {experiences.map((experience) => (
         <div
           key={experience.location}
           className="">
-          <ImageTooltipLink
-            name={experience.location}
+          <IconTooltipLink
+            name="defmethod"
             url={experience.url}
-            imageUrl={"/svg/defmethod.svg"}
+            label={experience.location}
           />
           {experience.positions.map((position, index) => (
             <ExperiencesRow

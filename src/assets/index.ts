@@ -1,11 +1,12 @@
-import c4me from "./images/c4me.png";
-import city from "./images/city.png";
-import organ from "./images/organ.png";
-import portfolio from "./images/portfolio.png";
+import c4me from "./images/c4me/thumbnail.jpg";
+import city from "./images/city/thumbnail.jpg";
+import organ from "./images/organ/thumbnail.jpg";
+import portfolio from "./images/portfolio/thumbnail.jpg";
+import speedbot from "./images/speedbot/thumbnail.jpg";
+import spotifysorter from "./images/spotify-sorter/thumbnail.jpg";
 import portrait from "./images/portrait.jpg";
+
 import portraitTransparent from "./images/portraitTransparent.png";
-import speedbot from "./images/speedbot.png";
-import spotifysorter from "./images/spotifysorter.png";
 
 import audacity from "./svg/audacity.svg";
 import blender from "./svg/blender.svg";
@@ -35,7 +36,7 @@ import unity from "./svg/unity.svg";
 import vite from "./svg/vite.svg";
 import web from "./svg/web.svg";
 
-const PNG = {
+const IMAGE_ASSET = {
   c4me: c4me,
   city: city,
   organ: organ,
@@ -46,7 +47,7 @@ const PNG = {
   spotifysorter: spotifysorter
 };
 
-const SVG = {
+const SVG_ASSET = {
   audacity: audacity,
   blender: blender,
   csharp: csharp,
@@ -76,4 +77,4 @@ const SVG = {
   web: web
 };
 
-export { PNG, SVG };
+export { IMAGE_ASSET, SVG_ASSET };

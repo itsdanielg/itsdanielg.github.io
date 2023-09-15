@@ -18,13 +18,13 @@ const DEFAULT_BUTTON_ANIMATED_STYLE = [
 ].join(" ");
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
+  children: string | JSX.Element | JSX.Element[];
   disabled?: boolean;
   animated?: boolean;
   className?: string;
 }
 
-export function Button({ label, disabled = false, animated = false, className = "", ...props }: ButtonProps) {
+export function Button({ children, disabled = false, animated = false, className = "", ...props }: ButtonProps) {
   const disabledStyle = disabled ? DEFAULT_BUTTON_DISABLED_STYLE : "";
   const animatedStyle = animated ? DEFAULT_BUTTON_ANIMATED_STYLE : DEFAULT_BUTTON_NON_ANIMATED_STYLE;
 
@@ -33,14 +33,14 @@ export function Button({ label, disabled = false, animated = false, className = 
       {...props}
       className={`${className} ${disabledStyle} ${animatedStyle} ${DEFAULT_BUTTON_STYLE}`}
       disabled={disabled}>
-      {label}
+      {children}
     </button>
   );
 }
 
 interface LinkButtonProps {
-  label: string;
   to: string;
+  children: string | JSX.Element | JSX.Element[];
   disabled?: boolean;
   animated?: boolean;
   target?: boolean;
@@ -48,8 +48,8 @@ interface LinkButtonProps {
 }
 
 export function LinkButton({
-  label,
   to,
+  children,
   disabled = false,
   animated = false,
   target = false,
@@ -63,7 +63,7 @@ export function LinkButton({
       className={`${className} ${disabledStyle} ${animatedStyle} ${DEFAULT_BUTTON_STYLE}`}
       target={target ? "_blank" : ""}
       to={to}>
-      {label}
+      {children}
     </Link>
   );
 }

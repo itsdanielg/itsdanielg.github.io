@@ -1,4 +1,4 @@
-import { Navigation } from "../../Compounds/Navigation";
+import { Navigation } from "@/components/Templates";
 
 interface PageLayoutProps {
   children: JSX.Element | JSX.Element[];

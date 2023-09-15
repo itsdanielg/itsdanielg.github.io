@@ -1,5 +1,5 @@
-import { Technology } from "../../../../types";
-import { IconLink } from "../../../Compounds";
+import { SVG_File, Technology } from "@/types";
+import { IconLink } from "@/components/Compounds";
 
 interface TechStackRowProps {
   technologies: Technology[];
@@ -12,7 +12,7 @@ export function TechStackRow({ technologies }: TechStackRowProps) {
         <IconLink
           key={technology.url + index}
           url={technology.url}
-          svg={technology.svg}
+          name={technology.svg as SVG_File}
         />
       ))}
     </div>

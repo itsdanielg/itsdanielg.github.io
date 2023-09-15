@@ -1,8 +1,7 @@
-import portrait from "../../../assets/portraitTransparent.png";
-import { HEADLINE } from "../../../text/headline";
-import { StaticImage } from "../../Compounds/StaticImage";
-import { TextCard } from "../../Compounds/TextCard";
-import { PageLayout } from "../PageLayout";
+import { HEADLINE } from "@/text";
+import { StaticImage } from "@/components/Compounds";
+import { TextCard } from "@/components/Compounds/TextCard";
+import { PageLayout } from "@/components/Templates";
 
 export function Explore() {
   return (
@@ -10,7 +9,7 @@ export function Explore() {
       <div className="flex flex-col items-center gap-4 h-screen my-8 mx-96 overflow-y-auto">
         <TextCard text={HEADLINE} />
         <StaticImage
-          url={portrait}
+          name="portrait"
           width="sm:w-[26rem]"
         />
       </div>

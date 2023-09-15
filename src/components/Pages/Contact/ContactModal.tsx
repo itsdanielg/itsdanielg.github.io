@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import { useContact } from "../../../api/hooks/useContact";
-import { Button, Loader } from "../../Atoms";
-import { StandardModal } from "../../Compounds/Modals/StandardModal";
+import { useContact } from "@/api/hooks";
+import { Loader, Button } from "@/components/Atoms";
+import { StandardModal } from "@/components/Compounds";
 import { ContactInput, ContactTextArea } from "./ContactInput";
 
 interface ContactModalProps {
@@ -57,9 +57,9 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
         ) : (
           <Button
             className="p-2 rounded-lg"
-            label="Submit"
-            onClick={async () => await handleSubmit()}
-          />
+            onClick={async () => await handleSubmit()}>
+            Submit
+          </Button>
         )}
       </form>
     </StandardModal>

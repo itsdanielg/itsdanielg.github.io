@@ -1,18 +1,20 @@
-import { Image, ImageProps } from "Atoms/";
+import { IMAGE_ASSET } from "@/assets";
+import { Image_File } from "@/types";
+import { Image } from "@/components/Atoms";
 
-interface HoverableImageProps extends ImageProps {
-  src: string;
+interface HoverableImageProps {
+  name: Image_File;
   width?: string;
-  square?: boolean;
+  isSquare?: boolean;
 }
 
-export function HoverableImage({ src, width = "w-80", square = true, ...props }: HoverableImageProps) {
+export function HoverableImage({ name, width = "w-80", isSquare = true, ...props }: HoverableImageProps) {
   return (
-    <div className={`${width} ${square ? "aspect-square" : ""}`}>
+    <div className={`${width} ${isSquare ? "aspect-square" : ""}`}>
       <Image
         {...props}
         className="transition-all duration-500 md:hover:scale-110"
-        src={src}
+        src={IMAGE_ASSET[name]}
       />
     </div>
   );

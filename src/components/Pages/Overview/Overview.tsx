@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../../Atoms";
+import { Button } from "@/components/Atoms";
 import { OverviewModal } from "./OverviewModal";
 
 export function Overview() {
@@ -7,10 +7,10 @@ export function Overview() {
   return (
     <>
       <Button
-        label="Overview"
-        animated
         onClick={() => setShow(true)}
-      />
+        animated>
+        Overview
+      </Button>
       <OverviewModal
         show={show}
         setShow={setShow}

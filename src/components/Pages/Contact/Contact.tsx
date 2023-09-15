@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "Atoms/";
+import { Button } from "@/components/Atoms";
 import { ContactModal } from "./ContactModal";
 import { ContactSnackbar } from "./ContactSnackbar";
 
@@ -10,10 +10,10 @@ export function Contact() {
   return (
     <>
       <Button
-        label="Contact"
-        animated
         onClick={() => setShowModal(true)}
-      />
+        animated>
+        Contact
+      </Button>
       <ContactModal
         show={showModal}
         setShow={setShowModal}

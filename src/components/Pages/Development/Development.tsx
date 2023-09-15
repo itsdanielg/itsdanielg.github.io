@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Loader } from "Atoms/";
+import { Loader } from "@/components/Atoms";
 
 export function Development() {
   const [timer, setTimer] = useState(2);

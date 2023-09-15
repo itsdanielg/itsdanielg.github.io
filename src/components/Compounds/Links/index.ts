@@ -1,3 +1,3 @@
 export * from "./IconLink";
-export * from "./ImageTooltipLink";
+export * from "./IconTooltipLink";
 export * from "./LabelLink";

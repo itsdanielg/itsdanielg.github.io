@@ -1,17 +1,19 @@
-import { Image, ImageProps } from "Atoms/";
+import { IMAGE_ASSET } from "@/assets";
+import { Image_File } from "@/types";
+import { Image } from "@/components/Atoms";
 
-interface StaticImageProps extends ImageProps {
-  src: string;
+interface StaticImageProps {
+  name: Image_File;
   width?: string;
-  square?: boolean;
+  isSquare?: boolean;
 }
 
-export function StaticImage({ src, width = "w-full", square = true, ...props }: StaticImageProps) {
+export function StaticImage({ name, width = "w-full", isSquare = true, ...props }: StaticImageProps) {
   return (
-    <div className={`${width} ${square ? "aspect-square" : ""} shrink-0 rounded-lg overflow-hidden`}>
+    <div className={`${width} ${isSquare ? "aspect-square" : ""} shrink-0 rounded-lg overflow-hidden`}>
       <Image
         {...props}
-        src={src}
+        src={IMAGE_ASSET[name]}
       />
     </div>
   );

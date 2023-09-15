@@ -1,39 +1,25 @@
-import { Link } from "react-router-dom";
-import { Icon } from "../";
-import { Asset } from "@/types";
-
-const DEFAULT_ICON_LINK_STYLE = [
-  "p-1",
-  "bg-gradient-to-r",
-  "from-blue",
-  "to-blue",
-  "bg-no-repeat",
-  "[background-position:0_100%]",
-  "[background-size:0_100%]",
-  "md:hover:[background-size:100%_100%]",
-  "transition-all",
-  "duration-300"
-].join(" ");
-
+import { SVG_File } from "@/types";
+import { LinkButton } from "@/components/Atoms";
+import { Icon } from "@/components/Compounds";
 interface IconLinkProps {
   url: string;
-  svg: Asset;
+  name: SVG_File;
   width?: string;
+  label?: string;
 }
 
-export function IconLink({ url, svg, width = "w-10", ...props }: IconLinkProps) {
+export function IconLink({ url, name, width = "w-10", label = "", ...props }: IconLinkProps) {
   return (
-    <Link
+    <LinkButton
       {...props}
-      className=""
-      target="_blank"
       to={url}>
-      <div className={`${DEFAULT_ICON_LINK_STYLE} flex items-center gap-2 bg-white rounded-lg`}>
+      <div className="flex items-center gap-2 bg-white rounded-lg">
         <Icon
-          fileName={svg}
+          name={name}
           width={width}
         />
+        {label}
       </div>
-    </Link>
+    </LinkButton>
   );
 }

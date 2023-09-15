@@ -1,6 +1,6 @@
-import { contact } from "../../../../text/contact";
-import { Label } from "../../../Atoms";
-import { Icon, LabelLink } from "../../../Compounds";
+import { contact } from "@/text";
+import { Label } from "@/components/Atoms";
+import { Icon, LabelLink } from "@/components/Compounds";
 
 export interface InfoRowProps {
   type: "email" | "github" | "linkedin";
@@ -9,7 +9,7 @@ export interface InfoRowProps {
 export function InfoRow({ type }: InfoRowProps) {
   return (
     <div className="flex items-center gap-2">
-      <Icon fileName={type} />
+      <Icon name={type} />
       {type !== "email" ? (
         <LabelLink
           label={contact[type]}

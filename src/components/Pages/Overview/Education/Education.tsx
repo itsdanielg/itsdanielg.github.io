@@ -1,15 +1,15 @@
-import { useCourses } from "../../../hooks/useCourses";
-import { Card } from "../../Atoms";
-import { Icon, LabelLink } from "../../Compounds";
+import { useCourses } from "@/api/hooks";
+import { Card } from "@/components/Atoms";
+import { Icon, LabelLink } from "@/components/Compounds";
 
-export function OverviewEducation() {
+export function Education() {
   const coursesToShow = [416, 381, 328, 373];
   const courses = useCourses(coursesToShow);
 
   return (
     <Card className="flex flex-col items-start gap-6 w-full md:mt-auto p-4">
       <Icon
-        fileName="sbu"
+        name="sbu"
         width="w-36 md:w-full"
         isRectangle
       />
