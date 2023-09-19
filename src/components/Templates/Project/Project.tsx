@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Image_File } from "@/types";
+import { Image_File, Project } from "@/types";
+import { ImageAsset } from "@/components/Compounds/";
 import { ProjectDescription } from "./ProjectDescription";
 import { ProjectSlideshow } from "./ProjectSlideshow";
-import { StaticImage } from "@/components/Compounds";
 
 const DEFAULT_PROJECT_BLOCK_STYLE = [
   "w-full",
@@ -15,27 +15,24 @@ const DEFAULT_PROJECT_BLOCK_STYLE = [
   "overflow-hidden"
 ].join(" ");
 
+type ProjectWithoutVideo = Omit<Project, "date" | "technologies" | "description">;
+
 type ProjectBlockProps =
   | {
       showVideo: true;
-      image: Image_File;
+      asset: Image_File;
       name?: string;
       github?: string;
       demo?: string;
       summary?: string;
     }
-  | {
+  | (ProjectWithoutVideo & {
       showVideo: false;
-      image: Image_File;
-      name: string;
-      github: string;
-      demo: string;
-      summary: string;
-    };
+    });
 
 export function ProjectBlock({
   showVideo = false,
-  image,
+  asset,
   name = "",
   github = "",
   demo = "",
@@ -44,20 +41,23 @@ export function ProjectBlock({
   const [show, setShow] = useState(false);
   // const { thumbnail, video } = useProject(fileName);
 
-  // if (showVideo) {
-  //   return (
-  //     <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
-  //       <ProjectSlideshow name={thumbnail} />
-  //     </div>
-  //   );
-  // }
+  if (showVideo) {
+    return (
+      <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
+        <ProjectSlideshow thumbnail={asset} />
+      </div>
+    );
+  }
 
   return (
     <div
       className={`${DEFAULT_PROJECT_BLOCK_STYLE} overflow-hidden relative group`}
       onMouseOver={() => setShow(true)}
       onMouseOut={() => setShow(false)}>
-      <StaticImage name={image} />
+      <ImageAsset
+        className="object-cover"
+        asset={asset}
+      />
       <ProjectDescription
         show={show}
         name={name}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { projects } from "@/text";
 import { PageLayout } from "@/components/Templates/";
 import { ProjectsDisplay } from "./ProjectsDisplay";
-import { ProjectsDisplayEdit } from "./ProjectsDisplayEdit";
+import { ProjectsBar } from "./ProjectsBar";
 
 export function Projects() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -10,14 +10,14 @@ export function Projects() {
 
   const filteredProjects = projects.filter((project) => {
     for (const filter of filters) {
-      if (project.skills.includes(filter)) return true;
+      if (project.technologies.includes(filter)) return true;
     }
     return false;
   });
 
   return (
     <PageLayout className="flex flex-col items-center gap-8 py-8 px-4 md:px-80">
-      <ProjectsDisplayEdit
+      <ProjectsBar
         filters={filters}
         isGrid={isGrid}
         setFilters={setFilters}

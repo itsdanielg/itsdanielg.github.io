@@ -1,5 +1,6 @@
-import { Image_File, Project } from "@/types";
-import { BorderedLabel, ProjectBlock } from "@/components/Compounds";
+import { Project } from "@/types";
+import { BorderedLabel } from "@/components/Compounds";
+import { ProjectBlock } from "@/components/Templates";
 
 interface ProjectsProps {
   projects: Project[];
@@ -14,7 +15,7 @@ export function Projects({ projects }: ProjectsProps) {
           <ProjectBlock
             key={project.name + index}
             showVideo={false}
-            png={project.fileName as Image_File}
+            asset={project.asset}
             name={project.name}
             github={project.github}
             demo={project.demo}

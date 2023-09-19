@@ -50,6 +50,13 @@ export function FiltersModal({ show, filters, setShow, setFilters }: FiltersModa
       <div className="flex justify-end w-full p-6 border-t-2 md:border-none">
         <Button
           onClick={() => {
+            setSelectedFilters([]);
+            setShow(false);
+          }}>
+          Remove Filters
+        </Button>
+        <Button
+          onClick={() => {
             addFilters();
             setShow(false);
           }}>

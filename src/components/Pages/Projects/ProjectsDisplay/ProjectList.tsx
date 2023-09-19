@@ -1,16 +1,16 @@
+import { Image_File } from "@/types";
 import { ProjectBlock } from "@/components/Templates";
 import { ProjectListDescription } from "./ProjectListDescription";
-import { Image_File } from "@/types";
 
 interface ProjectListProps {
   name: string;
-  fileName: Image_File;
+  asset: Image_File;
   github: string;
   demo: string;
   description: string[];
 }
 
-export function ProjectList({ name, fileName, github, demo, description, ...props }: ProjectListProps) {
+export function ProjectList({ name, asset, github, demo, description }: ProjectListProps) {
   return (
     <div className="flex flex-col-reverse md:flex-row items-start gap-4 md:h-[13.5rem] w-full overflow-hidden">
       <ProjectListDescription
@@ -21,7 +21,7 @@ export function ProjectList({ name, fileName, github, demo, description, ...prop
       />
       <ProjectBlock
         showVideo={true}
-        image={fileName}
+        asset={asset}
       />
     </div>
   );

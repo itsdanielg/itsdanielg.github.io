@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Technology } from "@/types";
+import { SVG_File, Technology } from "@/types";
 import { BorderedLabel } from "@/components/Compounds";
 import { FiltersModalToggle } from "./FiltersModalToggle";
 
@@ -30,13 +30,13 @@ export function FiltersModalTechnologies({
       <div className="flex flex-wrap gap-2">
         {technologies
           .filter((technology) => technology.isFilter)
-          .map(({ label, svg }, index) => {
+          .map(({ label, asset }, index) => {
             const isToggle = selectedFilters.includes(label);
             return (
               <FiltersModalToggle
                 key={label + index}
                 isToggle={isToggle}
-                svg={svg}
+                asset={asset}
                 label={label}
                 addFilter={addFilter}
                 removeFilter={removeFilter}

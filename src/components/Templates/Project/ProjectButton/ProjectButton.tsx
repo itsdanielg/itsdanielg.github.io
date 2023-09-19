@@ -1,11 +1,11 @@
 import { LinkButton } from "@/components/Atoms";
 
-interface ProjectBlockButtonProps {
+interface ProjectButtonProps {
   label: string;
   to: string;
 }
 
-export function ProjectBlockButton({ to, label }: ProjectBlockButtonProps) {
+export function ProjectButton({ to, label }: ProjectButtonProps) {
   const disabled = to === "" ? true : false;
   return (
     <LinkButton

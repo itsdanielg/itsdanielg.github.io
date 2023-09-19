@@ -2,14 +2,14 @@ import { Dispatch, SetStateAction } from "react";
 import { IconToggle } from "@/components/Compounds";
 import { Filters } from "./Filters";
 
-interface ProjectsDisplayEditProps {
+interface ProjectsBarProps {
   filters: string[];
   isGrid: boolean;
   setFilters: Dispatch<SetStateAction<string[]>>;
   setIsGrid: Dispatch<SetStateAction<boolean>>;
 }
 
-export function ProjectsDisplayEdit({ filters, isGrid, setFilters, setIsGrid }: ProjectsDisplayEditProps) {
+export function ProjectsBar({ filters, isGrid, setFilters, setIsGrid }: ProjectsBarProps) {
   return (
     <div className="flex items-center gap-4 w-full p-4 bg-black-1-t rounded-md">
       <Filters
@@ -19,12 +19,12 @@ export function ProjectsDisplayEdit({ filters, isGrid, setFilters, setIsGrid }: 
       <div className="flex gap-2">
         <IconToggle
           isToggle={isGrid}
-          name="grid"
+          asset="grid"
           onClick={() => setIsGrid(true)}
         />
         <IconToggle
           isToggle={!isGrid}
-          name="list"
+          asset="list"
           onClick={() => setIsGrid(false)}
         />
       </div>

@@ -1,4 +1,4 @@
-import { ProjectBlockButton } from "./ProjectBlockButton";
+import { ProjectButton } from "./ProjectButton";
 
 interface DemoButtonProps {
   to: string;
@@ -6,7 +6,7 @@ interface DemoButtonProps {
 
 export function DemoButton({ to }: DemoButtonProps) {
   return (
-    <ProjectBlockButton
+    <ProjectButton
       label="View Demo"
       to={to}
     />

@@ -2,10 +2,11 @@ import { Dispatch, SetStateAction } from "react";
 import { experiences, projects } from "@/text";
 import { LinkButton, Button } from "@/components/Atoms";
 import { StandardModal, StaticImage } from "@/components/Compounds";
-import { Contact, Projects } from "@/components/Pages";
+import { Contact } from "@/components/Pages";
 import { Education } from "./Education";
 import { Experiences } from "./Experiences";
 import { Info } from "./Info";
+import { Projects } from "./Projects";
 import { TechStack } from "./TechStack";
 
 interface OverviewModalProps {
@@ -24,7 +25,7 @@ export function OverviewModal({ show, setShow }: OverviewModalProps) {
       setShow={setShow}>
       <div className="flex flex-col md:flex-row w-full h-full gap-12 md:gap-0 p-8 overflow-auto">
         <div className="flex flex-col items-start gap-4 w-full md:w-80 md:pr-6 md:mr-6 md:border-r md:border-black">
-          <StaticImage name="portrait" />
+          <StaticImage asset="portrait" />
           <Info />
           <Education />
         </div>

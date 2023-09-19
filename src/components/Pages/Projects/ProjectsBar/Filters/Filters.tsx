@@ -11,10 +11,6 @@ interface FiltersProps {
 export function Filters({ filters, setFilters }: FiltersProps) {
   const [show, setShow] = useState(false);
 
-  const addFilter = (filter: string) => {
-    setFilters((prevFilters) => [...prevFilters, filter]);
-  };
-
   const removeFilter = (filter: string) => {
     setFilters((prevFilters) => prevFilters.filter((oldFilter) => oldFilter !== filter));
   };
