@@ -1,7 +1,6 @@
 import { twMerge } from "tailwind-merge";
-import { SVG_ASSET } from "@/assets";
 import { SVG_File } from "@/types";
-import { Image } from "@/components/Atoms";
+import { SVGAsset } from "@/components/Compounds";
 
 export interface IconProps {
   asset: SVG_File;
@@ -14,10 +13,7 @@ export function Icon({ asset, isRectangle = false, className = "" }: IconProps) 
 
   return (
     <div className={twMerge(rectangleStyle, className)}>
-      <Image
-        src={SVG_ASSET[asset]}
-        alt={asset}
-      />
+      <SVGAsset asset={asset} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { ImgHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   className?: string;
 }

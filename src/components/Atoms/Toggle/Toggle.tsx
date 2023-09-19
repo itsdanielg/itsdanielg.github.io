@@ -14,7 +14,7 @@ export function Toggle({ isToggle, className = "", children, ...props }: ToggleP
     <button
       {...props}
       className={twMerge(
-        `${toggleStyle} flex flex-col items-center gap-1 border-2 border-transparent rounded-lg md:hover:border-black transition`,
+        `${toggleStyle} flex flex-col items-center gap-1 border-2 border-transparent rounded-lg md:hover:border-black transition-all duration-300`,
         className
       )}>
       {children}
