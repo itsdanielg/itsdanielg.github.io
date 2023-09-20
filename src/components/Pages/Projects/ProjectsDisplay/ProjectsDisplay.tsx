@@ -19,6 +19,7 @@ export function ProjectsDisplay({ projects, isGrid }: ProjectsDisplayProps) {
             name={project.name}
             github={project.github}
             demo={project.demo}
+            technologies={project.technologies}
             summary={project.summary}
           />
         ))}
@@ -34,6 +35,7 @@ export function ProjectsDisplay({ projects, isGrid }: ProjectsDisplayProps) {
           asset={project.asset}
           github={project.github}
           demo={project.demo}
+          technologies={project.technologies}
           description={project.description}
         />
       ))}

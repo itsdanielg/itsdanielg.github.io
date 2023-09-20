@@ -7,16 +7,18 @@ interface ProjectListProps {
   asset: Image_File;
   github: string;
   demo: string;
+  technologies: string[];
   description: string[];
 }
 
-export function ProjectList({ name, asset, github, demo, description }: ProjectListProps) {
+export function ProjectList({ name, asset, github, demo, technologies, description }: ProjectListProps) {
   return (
-    <div className="flex flex-col-reverse md:flex-row items-start gap-4 md:h-[13.5rem] w-full overflow-hidden">
+    <div className="flex flex-col-reverse md:flex-row items-center gap-4 md:h-[18rem] w-full overflow-hidden">
       <ProjectListDescription
         name={name}
         github={github}
         demo={demo}
+        technologies={technologies}
         description={description}
       />
       <ProjectBlock

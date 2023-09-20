@@ -15,7 +15,7 @@ const DEFAULT_PROJECT_BLOCK_STYLE = [
   "overflow-hidden"
 ].join(" ");
 
-type ProjectWithoutVideo = Omit<Project, "date" | "technologies" | "description">;
+type ProjectWithoutVideo = Omit<Project, "date" | "description">;
 
 type ProjectBlockProps =
   | {
@@ -24,6 +24,7 @@ type ProjectBlockProps =
       name?: string;
       github?: string;
       demo?: string;
+      technologies?: [];
       summary?: string;
     }
   | (ProjectWithoutVideo & {
@@ -36,6 +37,7 @@ export function ProjectBlock({
   name = "",
   github = "",
   demo = "",
+  technologies = [],
   summary = ""
 }: ProjectBlockProps) {
   const [show, setShow] = useState(false);
@@ -63,6 +65,7 @@ export function ProjectBlock({
         name={name}
         github={github}
         demo={demo}
+        technologies={technologies}
         summary={summary}
       />
     </div>

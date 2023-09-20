@@ -17,7 +17,8 @@ export function IconLink({ url, asset, label = "", className = "", iconClassName
       className={twMerge("p-1", className)}
       {...props}
       to={url}
-      animated>
+      animated
+      target>
       <div className="flex items-center gap-2 rounded-lg">
         <Icon
           className={twMerge("w-10", iconClassName)}

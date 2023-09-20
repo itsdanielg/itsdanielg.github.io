@@ -17,7 +17,7 @@ export const projects: Project[] = [
     github: "",
     demo: "",
     date: "October 2022 - Present",
-    technologies: ["TypeScript", "React", "Tailwind CSS", "Vite", "Spotify Web API"],
+    technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
     summary: "Web application that sorts a user's spotify playlist based on selected attributes.",
     description: ["Web application that sorts a user's spotify playlist based on selected attributes"]
   },
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     github: "https://github.com/itsdanielg/c4me",
     demo: "https://itsdanielg.github.io/c4me/#/",
     date: "January 2020 - May 2020",
-    technologies: ["JavaScript", "Java", "SQL", "React", "jQuery", "Java Servlets"],
+    technologies: ["JavaScript", "Java", "SQL", "React", "jQuery"],
     summary:
       "Assists upcoming undergraduate students' college planning through a recommendation of colleges and universities based on documented grades and test scores.",
     description: [

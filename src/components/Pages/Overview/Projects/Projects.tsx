@@ -11,15 +11,16 @@ export function Projects({ projects }: ProjectsProps) {
     <div className="flex flex-col items-start gap-2 w-full">
       <BorderedLabel label="projects" />
       <div className="flex flex-col md:flex-row items-center gap-4 md:p-4 md:bg-black-1 rounded-lg">
-        {projects.map((project, index) => (
+        {projects.map(({ name, asset, github, demo, technologies, summary }, index) => (
           <ProjectBlock
-            key={project.name + index}
+            key={name + index}
             showVideo={false}
-            asset={project.asset}
-            name={project.name}
-            github={project.github}
-            demo={project.demo}
-            summary={project.summary}
+            name={name}
+            asset={asset}
+            github={github}
+            demo={demo}
+            technologies={technologies}
+            summary={summary}
           />
         ))}
       </div>

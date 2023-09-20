@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { technologies } from "@/text";
+import { languages, frameworks, software } from "@/text";
 import { Button } from "@/components/Atoms";
 import { StandardModal } from "@/components/Compounds";
 import { FiltersModalTechnologies } from "./FiltersModalTechnologies";
@@ -30,19 +30,19 @@ export function FiltersModal({ show, filters, setShow, setFilters }: FiltersModa
       <div className="flex flex-col w-full h-full items-start gap-6 p-5 overflow-auto">
         <FiltersModalTechnologies
           title="Languages"
-          technologies={technologies.languages}
+          technologies={languages}
           selectedFilters={selectedFilters}
           setSelectedFilters={setSelectedFilters}
         />
         <FiltersModalTechnologies
           title="Libraries / Frameworks"
-          technologies={technologies.frameworks}
+          technologies={frameworks}
           selectedFilters={selectedFilters}
           setSelectedFilters={setSelectedFilters}
         />
         <FiltersModalTechnologies
           title="Software"
-          technologies={technologies.software}
+          technologies={software}
           selectedFilters={selectedFilters}
           setSelectedFilters={setSelectedFilters}
         />
