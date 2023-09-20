@@ -7,7 +7,7 @@ interface GithubButtonProps {
 export function GithubButton({ to }: GithubButtonProps) {
   return (
     <ProjectButton
-      label="View Github"
+      category="Github"
       to={to}
     />
   );

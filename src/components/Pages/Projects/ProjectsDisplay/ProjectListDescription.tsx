@@ -38,8 +38,8 @@ export function ProjectListDescription({ name, github, demo, technologies, descr
         ))}
       </div>
       <div className="flex items-center justify-end md:justify-start gap-2 w-full">
-        <GithubButton to={github} />
         <DemoButton to={demo} />
+        <GithubButton to={github} />
       </div>
     </div>
   );

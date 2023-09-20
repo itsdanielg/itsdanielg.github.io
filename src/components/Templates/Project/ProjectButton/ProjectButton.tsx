@@ -1,12 +1,14 @@
 import { LinkButton } from "@/components/Atoms";
 
 interface ProjectButtonProps {
-  label: string;
+  category: "Github" | "Demo";
   to: string;
 }
 
-export function ProjectButton({ to, label }: ProjectButtonProps) {
+export function ProjectButton({ category, to }: ProjectButtonProps) {
   const disabled = to === "" ? true : false;
+  const label = disabled ? `${category} Not Available` : `View ${category}`;
+
   return (
     <LinkButton
       className={`text-sm`}

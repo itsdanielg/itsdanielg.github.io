@@ -7,7 +7,7 @@ interface DemoButtonProps {
 export function DemoButton({ to }: DemoButtonProps) {
   return (
     <ProjectButton
-      label="View Demo"
+      category="Demo"
       to={to}
     />
   );
