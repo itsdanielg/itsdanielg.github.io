@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useContact } from "@/api/hooks";
 import { Loader, Button } from "@/components/Atoms";
 import { StandardModal } from "@/components/Compounds";
@@ -18,6 +18,13 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
 
   const { loading, error, sendMessage } = useContact();
 
+  useEffect(() => {
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  }, [show]);
+
   const handleSubmit = async () => {
     await sendMessage(name, email, subject, message);
     setShowSnackbar(true);
@@ -30,7 +37,10 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
       setShow={setShow}
       root="modal2"
       className="flex flex-col gap-4 w-[85%] md:w-auto p-6">
-      <span className="text-xl">Let's get in touch!</span>
+      <div className="flex items-center justify-between">
+        <span className="text-xl">Let's get in touch!</span>
+        {/* {loading && <Loader size="contact" />} */}
+      </div>
       <form className="flex flex-col items-center gap-4">
         <ContactInput
           placeholder="Name"
@@ -52,15 +62,12 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
           value={message}
           setValue={setMessage}
         />
-        {loading ? (
-          <Loader width="w-12" />
-        ) : (
-          <Button
-            className="p-2 rounded-lg"
-            onClick={async () => await handleSubmit()}>
-            Submit
-          </Button>
-        )}
+        <Button
+          className="p-2 rounded-lg"
+          disabled={name === "" || email === "" || subject === "" || message === ""}
+          onClick={async () => await handleSubmit()}>
+          Submit
+        </Button>
       </form>
     </StandardModal>
   );
