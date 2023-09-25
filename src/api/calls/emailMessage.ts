@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { APIReturn } from "../../types";
+import { APIReturn } from "@/types";
 
 const serviceId = "service_kw1c01o";
 const templateId = "default_template_id";
@@ -12,9 +12,8 @@ export async function emailMessage(name: string, email: string, subject: string,
       subject: subject,
       message: message
     });
+    return { error: false };
   } catch {
-    return { response: 401 };
-  } finally {
-    return { response: 200 };
+    return { error: true };
   }
 }

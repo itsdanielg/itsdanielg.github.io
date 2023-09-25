@@ -16,17 +16,24 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-  const { loading, error, sendMessage } = useContact();
+  const [error, setError] = useState(false);
+
+  const { loading, sendMessage } = useContact();
 
   useEffect(() => {
     setName("");
     setEmail("");
     setSubject("");
     setMessage("");
+    setError(false);
   }, [show]);
 
   const handleSubmit = async () => {
-    await sendMessage(name, email, subject, message);
+    const error = await sendMessage(name, email, subject, message);
+    if (error) {
+      setError(true);
+      return;
+    }
     setShowSnackbar(true);
     setShow(false);
   };
@@ -39,7 +46,6 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
       className="flex flex-col gap-4 w-[85%] md:w-auto p-6">
       <div className="flex items-center justify-between">
         <span className="text-xl">Let's get in touch!</span>
-        {/* {loading && <Loader size="contact" />} */}
       </div>
       <form className="flex flex-col items-center gap-4">
         <ContactInput
@@ -62,12 +68,18 @@ export function ContactModal({ show, setShow, setShowSnackbar }: ContactModalPro
           value={message}
           setValue={setMessage}
         />
-        <Button
-          className="p-2 rounded-lg"
-          disabled={name === "" || email === "" || subject === "" || message === ""}
-          onClick={async () => await handleSubmit()}>
-          Submit
-        </Button>
+        {error && <span className="text-red-500 text-sm">Message could not be sent. Please try again.</span>}
+        {loading ? (
+          <Loader size="contact" />
+        ) : (
+          <Button
+            className="p-2 rounded-lg"
+            type="button"
+            disabled={name === "" || email === "" || subject === "" || message === ""}
+            onClick={async () => await handleSubmit()}>
+            Submit
+          </Button>
+        )}
       </form>
     </StandardModal>
   );

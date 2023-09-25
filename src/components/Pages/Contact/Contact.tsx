@@ -20,7 +20,6 @@ export function Contact() {
         setShowSnackbar={setShowSnackbar}
       />
       <ContactSnackbar
-        label="Message sent!"
         showSnackbar={showSnackbar}
         setShowSnackbar={setShowSnackbar}
       />

@@ -1,11 +1,11 @@
 import { twMerge } from "tailwind-merge";
 
 interface LoaderProps {
-  size: "snackbar" | "page";
+  size: "contact" | "page";
 }
 
 const WIDTH = {
-  snackbar: "w-12",
+  contact: "w-6",
   page: "w-36"
 };
 

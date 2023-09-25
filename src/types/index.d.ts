@@ -1,5 +1,5 @@
 type APIReturn = {
-  response: 200 | 401;
+  error: boolean;
 };
 
 type Course = {
