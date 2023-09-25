@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Image_File, Project } from "@/types";
 import { ImageAsset } from "@/components/Compounds/";
 import { ProjectDescription } from "./ProjectDescription";
-import { ProjectSlideshow } from "./ProjectSlideshow";
 
 const DEFAULT_PROJECT_BLOCK_STYLE = [
   "w-full",
@@ -41,15 +40,6 @@ export function ProjectBlock({
   summary = ""
 }: ProjectBlockProps) {
   const [show, setShow] = useState(false);
-  // const { thumbnail, video } = useProject(fileName);
-
-  if (showVideo) {
-    return (
-      <div className={`${DEFAULT_PROJECT_BLOCK_STYLE} bg-red-100`}>
-        <ProjectSlideshow thumbnail={asset} />
-      </div>
-    );
-  }
 
   return (
     <div
@@ -60,14 +50,16 @@ export function ProjectBlock({
         className="object-cover"
         asset={asset}
       />
-      <ProjectDescription
-        show={show}
-        name={name}
-        github={github}
-        demo={demo}
-        technologies={technologies}
-        summary={summary}
-      />
+      {!showVideo && (
+        <ProjectDescription
+          show={show}
+          name={name}
+          github={github}
+          demo={demo}
+          technologies={technologies}
+          summary={summary}
+        />
+      )}
     </div>
   );
 }
