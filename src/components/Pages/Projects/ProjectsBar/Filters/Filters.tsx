@@ -18,7 +18,7 @@ export function Filters({ filters, setFilters }: FiltersProps) {
   return (
     <div className="flex items-center grow">
       <span className="pr-2 border-white-1 border-r text-white">Filters</span>
-      <div className="flex flex-wrap gap-2 pl-2">
+      <div className="flex items-center flex-wrap gap-2 pl-2">
         {filters.map((filter, index) => (
           <FilterTag
             key={filter + index}
@@ -26,11 +26,7 @@ export function Filters({ filters, setFilters }: FiltersProps) {
             onClick={() => removeFilter(filter)}
           />
         ))}
-        <Button
-          className="md:hover:text-white transition"
-          onClick={() => setShow(true)}>
-          Add Filter
-        </Button>
+        <Button onClick={() => setShow(true)}>Add Filter</Button>
         <FiltersModal
           show={show}
           filters={filters}

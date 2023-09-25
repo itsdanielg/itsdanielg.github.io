@@ -16,7 +16,7 @@ export function FiltersModal({ show, filters, setShow, setFilters }: FiltersModa
 
   useEffect(() => {
     setSelectedFilters(filters);
-  }, [filters]);
+  }, [show, filters]);
 
   const addFilters = () => {
     setFilters(selectedFilters);
@@ -48,13 +48,6 @@ export function FiltersModal({ show, filters, setShow, setFilters }: FiltersModa
         />
       </div>
       <div className="flex justify-end w-full p-6 border-t-2 md:border-none">
-        <Button
-          onClick={() => {
-            setSelectedFilters([]);
-            setShow(false);
-          }}>
-          Remove Filters
-        </Button>
         <Button
           onClick={() => {
             addFilters();

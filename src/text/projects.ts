@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     name: "Spotify Sorter",
     asset: "spotifysorter",
-    github: "",
+    github: "https://github.com/itsdanielg/Spotify-Sorter",
     demo: "",
     date: "October 2022 - Present",
     technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
