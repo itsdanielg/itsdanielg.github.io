@@ -22,7 +22,7 @@ export function Development() {
         <p>This page is under development. Please check back later!</p>
         <br />
         <p>{`Redirecting in ${timer}...`}</p>
-        <Loader width="w-12" />
+        <Loader size="page" />
       </div>
     </div>
   );

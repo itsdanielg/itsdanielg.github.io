@@ -9,8 +9,8 @@ export function Explore() {
       <div className="flex flex-col items-center gap-4 h-screen my-8 mx-96 overflow-y-auto">
         <TextCard text={HEADLINE} />
         <StaticImage
-          name="portrait"
-          width="sm:w-[26rem]"
+          className="sm:w-[26rem]"
+          asset="portrait"
         />
       </div>
     </PageLayout>
