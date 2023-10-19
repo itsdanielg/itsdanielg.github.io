@@ -15,7 +15,7 @@ export const projects: Project[] = [
     name: "Spotify Sorter",
     asset: "spotifysorter",
     github: "https://github.com/itsdanielg/Spotify-Sorter",
-    demo: "",
+    demo: "https://spotify-sorter-tau.vercel.app/",
     date: "October 2022 - Present",
     technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
     summary: "Web application that sorts a user's spotify playlist based on selected attributes.",

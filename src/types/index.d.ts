@@ -2,6 +2,12 @@ type APIReturn = {
   error: boolean;
 };
 
+type Contact = {
+  email: string;
+  linkedin: string;
+  github: string;
+};
+
 type Course = {
   name: string;
   url: string;
@@ -79,4 +85,4 @@ type SVG_File =
   | "vite"
   | "web";
 
-export { APIReturn, Course, Experience, Project, Technology, Image_File, SVG_File };
+export { APIReturn, Contact, Course, Experience, Project, Technology, Image_File, SVG_File };
