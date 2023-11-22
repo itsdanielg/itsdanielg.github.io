@@ -18,8 +18,11 @@ export const projects: Project[] = [
     demo: "https://spotify-sorter-tau.vercel.app/",
     date: "October 2022 - Present",
     technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
-    summary: "Web application that sorts a user's spotify playlist based on selected attributes.",
-    description: ["Web application that sorts a user's spotify playlist based on selected attributes"]
+    summary:
+      "A web tool designed to organize Spotify playlists with more flexible options beyond the ones provided by the Spotify application.",
+    description: [
+      "A web tool designed to organize Spotify playlists with more flexible options beyond the ones provided by the Spotify application."
+    ]
   },
   // {
   //   name: "FOUND:IT",
