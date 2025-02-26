@@ -3,7 +3,7 @@ import city from "./images/city/thumbnail.jpg";
 import organ from "./images/organ/thumbnail.jpg";
 import portfolio from "./images/portfolio/thumbnail.jpg";
 import speedbot from "./images/speedbot/thumbnail.jpg";
-import spotifysorter from "./images/spotify-sorter/thumbnail.jpg";
+import spotifysorter from "./images/spotify-sorter/thumbnail.png";
 import portrait from "./images/portrait.jpg";
 
 import portraitTransparent from "./images/portraitTransparent.png";
