@@ -1,8 +1,8 @@
 import emailjs from "@emailjs/browser";
 import { APIReturn } from "@/types";
 
-const serviceId = "service_kw1c01o";
-const templateId = "default_template_id";
+const serviceId = process.env.EMAILJS_SERVICE_ID as string;
+const templateId = process.env.EMAILJS_TEMPLATE_ID as string;
 
 export async function emailMessage(name: string, email: string, subject: string, message: string): Promise<APIReturn> {
   try {
