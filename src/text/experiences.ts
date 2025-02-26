@@ -11,9 +11,9 @@ export const experiences: Experience[] = [
         description: [
           "Built a client portal in-tandem with an offshore engineering team under a Scrum methodology. Developed in TypeScript/React with a Ruby on Rails and PostgreSQL API to serve as a proxy for managing Salesforce data",
           "Transformed InVision designs into responsive web pages. Utilized React hooks, contexts, and Tailwind CSS components for state management and rapid UI/UX development",
-          "Deployed Test-Driven Development and enforced a 95% test coverage standard. Reduced debugging stories by 60%",
-          "Enabled cross-functional team collaboration to reinforce Agile principles, improve backlog management, and minimize blockers. Led to sprint retrospectives and features being delivered on time",
-          "Eliminated code redundancy through constant pair programming sessions and adhering to SOLID Principles and Design Patterns"
+          "Implemented Test-Driven Development (TDD), enforcing a 95% test coverage to improve code reliability and reduce debugging tasks",
+          "Collaborated cross-functionally using Jira, reinforcing Agile principles to improve backlog management, minimize blockers, and ensure timely feature delivery",
+          "Eliminated code redundancy through pair programming sessions, adhering to SOLID Principles and Design Patterns"
         ]
       }
     ]
