@@ -1,27 +1,19 @@
 import { Project } from "@/types";
 
 export const projects: Project[] = [
-  // {
-  //   name: "Portfolio",
-  //   asset: "portfolio",
-  //   github: "https://github.com/itsdanielg/itsdanielg.github.io",
-  //   demo: "",
-  //   date: "November 2017 - Present",
-  //   technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
-  //   summary: "My personal website. Includes a portfolio of my most recent works.",
-  //   description: ["My personal website", "Includes a portfolio of my most recent works"]
-  // },
   {
     name: "Spotify Sorter",
     asset: "spotifysorter",
     github: "https://github.com/itsdanielg/Spotify-Sorter",
     demo: "https://spotify-sorter-tau.vercel.app/",
-    date: "October 2022 - Present",
+    date: "January 2023 - Present",
     technologies: ["TypeScript", "React", "Tailwind CSS", "Vite"],
     summary:
-      "A web tool designed to organize Spotify playlists with more flexible options beyond the ones provided by the Spotify application.",
+      "Advanced sorting app for Spotify playlist tracks, enabling sorting beyond native options (title, artist, album, etc.)",
     description: [
-      "A web tool designed to organize Spotify playlists with more flexible options beyond the ones provided by the Spotify application."
+      "Advanced sorting app for Spotify playlist tracks, enabling sorting beyond native options (title, artist, album, etc.)",
+      "Utilized React Query caching to reduce Spotify Web API calls and avoid rate limits",
+      "Integrated CI/CD pipeline with GitHub Actions for automated testing, builds, and deployments to Vercel"
     ]
   },
   // {
