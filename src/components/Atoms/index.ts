@@ -1,5 +1,6 @@
 export * from "./Button";
 export * from "./Card";
+export * from "./Disclosure";
 export * from "./Image";
 export * from "./Label";
 export * from "./Loader";

@@ -47,7 +47,7 @@ function RightSideColumn() {
       <Experiences experiences={experiencesToShow} />
       <Projects projects={projectsToShow} />
       <TechStack />
-      <div className="hidden md:flex md:ml-auto gap-4 bottom-0 right-0">
+      <div className="hidden md:flex gap-4 absolute bottom-0 right-0">
         <LinkButton
           to="/projects"
           animated>
