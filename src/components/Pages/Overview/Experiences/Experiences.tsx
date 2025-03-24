@@ -1,6 +1,6 @@
 import { Experience } from "@/types";
-import { BorderedLabel, LabelLink } from "@/components/Compounds";
-import { ExperiencesRow } from "./ExperiencesRow";
+import { Disclosure } from "@/components/Atoms";
+import { BorderedLabel } from "@/components/Compounds";
 
 interface ExperiencesProps {
   experiences: Experience[];
@@ -11,22 +11,31 @@ export function Experiences({ experiences }: ExperiencesProps) {
     <div className="flex flex-col items-start gap-2">
       <BorderedLabel label="experience" />
       {experiences.map((experience) => (
-        <div key={experience.location}>
-          <LabelLink
-            className="text-lg"
-            label={experience.location}
-            url={experience.url}
-          />
+        <Disclosure title={<ExperiencesTitle experience={experience} />}>
           {experience.positions.map((position, index) => (
-            <ExperiencesRow
+            <ul
               key={position.name + index}
-              name={position.name}
-              date={position.date}
-              description={position.description}
-            />
+              className="list-disc list-outside ml-6">
+              {position.description.map((bulletPoint) => (
+                <li key={bulletPoint}>{bulletPoint}</li>
+              ))}
+            </ul>
           ))}
-        </div>
+        </Disclosure>
       ))}
     </div>
+  );
+}
+
+interface ExperiencesTitleProps {
+  experience: Experience;
+}
+
+function ExperiencesTitle({ experience }: ExperiencesTitleProps) {
+  return (
+    <span className={` flex items-center w-full mr-2`}>
+      <strong>{experience.positions[0].name}</strong> @ {experience.location}
+      <span className="ml-auto">{experience.positions[0].date}</span>{" "}
+    </span>
   );
 }
