@@ -19,7 +19,8 @@ export function Carousel<T>({ content, element: Element, className = "" }: Carou
     const threshhold = container.scrollWidth / 2 + 8;
     const animate = () => {
       if (!isHovered) container.scrollLeft += 1;
-      else container.scrollLeft += 0.05;
+      else container.scrollLeft += 0.5;
+      console.log(container.scrollLeft);
 
       if (container.scrollLeft >= threshhold) {
         container.scrollLeft = 0.0;
