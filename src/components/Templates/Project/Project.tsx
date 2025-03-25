@@ -16,14 +16,7 @@ const DEFAULT_PROJECT_BLOCK_STYLE = [
 
 type ProjectWithoutVideo = Omit<Project, "date" | "description">;
 
-export function ProjectBlock({
-  name = "",
-  asset,
-  github = "",
-  demo = "",
-  technologies = [],
-  summary = ""
-}: ProjectWithoutVideo) {
+export function ProjectBlock(project: ProjectWithoutVideo) {
   const [show, setShow] = useState(false);
 
   return (
@@ -33,15 +26,11 @@ export function ProjectBlock({
       onMouseLeave={() => setShow(false)}>
       <ImageAsset
         className="object-cover"
-        asset={asset}
+        asset={project.asset}
       />
       <ProjectDescription
         show={show}
-        name={name}
-        github={github}
-        demo={demo}
-        technologies={technologies}
-        summary={summary}
+        {...project}
       />
     </div>
   );
