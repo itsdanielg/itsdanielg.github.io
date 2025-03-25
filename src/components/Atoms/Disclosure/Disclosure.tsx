@@ -18,7 +18,7 @@ export function Disclosure({ title, children }: DisclosureProps) {
 
   return (
     <div
-      className={`${show ? "gap-2" : "gap-0"} flex flex-col p-4 w-full bg-white rounded-lg transition-all duration-300`}>
+      className={`${show ? "gap-2" : "gap-0"} relative flex flex-col p-4 w-full bg-white rounded-lg transition-all duration-300`}>
       <button
         onClick={toggleShow}
         className={`flex items-center w-full group`}>

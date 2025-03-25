@@ -1,3 +1,4 @@
+export * from "./Accordion";
 export * from "./Asset";
 export * from "./Icon";
 export * from "./Image";
