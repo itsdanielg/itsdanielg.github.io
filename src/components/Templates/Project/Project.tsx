@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image_File, Project } from "@/types";
+import { Project } from "@/types";
 import { ImageAsset } from "@/components/Compounds/";
 import { ProjectDescription } from "./ProjectDescription";
 
@@ -16,50 +16,33 @@ const DEFAULT_PROJECT_BLOCK_STYLE = [
 
 type ProjectWithoutVideo = Omit<Project, "date" | "description">;
 
-type ProjectBlockProps =
-  | {
-      showVideo: true;
-      asset: Image_File;
-      name?: string;
-      github?: string;
-      demo?: string;
-      technologies?: [];
-      summary?: string;
-    }
-  | (ProjectWithoutVideo & {
-      showVideo: false;
-    });
-
 export function ProjectBlock({
-  showVideo = false,
-  asset,
   name = "",
+  asset,
   github = "",
   demo = "",
   technologies = [],
   summary = ""
-}: ProjectBlockProps) {
+}: ProjectWithoutVideo) {
   const [show, setShow] = useState(false);
 
   return (
     <div
       className={`${DEFAULT_PROJECT_BLOCK_STYLE} overflow-hidden relative group`}
-      onMouseOver={() => setShow(true)}
-      onMouseOut={() => setShow(false)}>
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}>
       <ImageAsset
         className="object-cover"
         asset={asset}
       />
-      {!showVideo && (
-        <ProjectDescription
-          show={show}
-          name={name}
-          github={github}
-          demo={demo}
-          technologies={technologies}
-          summary={summary}
-        />
-      )}
+      <ProjectDescription
+        show={show}
+        name={name}
+        github={github}
+        demo={demo}
+        technologies={technologies}
+        summary={summary}
+      />
     </div>
   );
 }
