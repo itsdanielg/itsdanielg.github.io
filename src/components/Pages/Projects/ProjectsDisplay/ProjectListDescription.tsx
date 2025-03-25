@@ -1,17 +1,13 @@
-import { SVG_File } from "@/types";
+import { Project, SVG_File } from "@/types";
 import { technologies as Technologies } from "@/text";
 import { IconLink } from "@/components/Compounds";
 import { GithubButton, DemoButton } from "@/components/Templates/Project/ProjectButton";
 
-interface ProjectListDescriptionProps {
-  name: string;
-  github: string;
-  demo: string;
-  technologies: string[];
-  description: string[];
-}
+type ProjectListDescriptionProps = Pick<Project, "name" | "github" | "demo" | "technologies" | "description">;
 
 export function ProjectListDescription({ name, github, demo, technologies, description }: ProjectListDescriptionProps) {
+  console.log(name);
+
   return (
     <div className="flex flex-col items-start gap-2 grow w-full md:w-auto md:h-full overflow-hidden">
       <span className="text-xl font-bold font-expletusSans">{name.toUpperCase()}</span>
