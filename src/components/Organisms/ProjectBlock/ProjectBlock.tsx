@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { HTMLAttributes } from "react";
 import { Project } from "@/types";
 import { ImageAsset } from "@/components/Compounds/";
-import { ProjectDescription } from "./ProjectDescription";
 
 const DEFAULT_PROJECT_BLOCK_STYLE = [
   "w-full",
@@ -14,24 +13,18 @@ const DEFAULT_PROJECT_BLOCK_STYLE = [
   "overflow-hidden"
 ].join(" ");
 
-type ProjectWithoutVideo = Omit<Project, "date" | "description">;
+type ProjectBlockProps = Pick<Project, "asset"> & HTMLAttributes<HTMLDivElement>;
 
-export function ProjectBlock(project: ProjectWithoutVideo) {
-  const [show, setShow] = useState(false);
-
+export function ProjectBlock({ asset, children = <></>, ...props }: ProjectBlockProps) {
   return (
     <div
       className={`${DEFAULT_PROJECT_BLOCK_STYLE} overflow-hidden relative group`}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}>
+      {...props}>
       <ImageAsset
         className="object-cover"
-        asset={project.asset}
+        asset={asset}
       />
-      <ProjectDescription
-        show={show}
-        {...project}
-      />
+      {children}
     </div>
   );
 }

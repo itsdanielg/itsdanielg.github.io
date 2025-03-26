@@ -1,20 +1,33 @@
+import { useState } from "react";
 import { technologies as Technologies } from "@/text";
 import { Project } from "@/types";
+import { ProjectBlock } from "../ProjectBlock/ProjectBlock";
 import { IconLink } from "@/components/Compounds";
-import { DemoButton, GithubButton } from "./ProjectButton";
+import { ProjectButton } from "../ProjectButton";
 
-type ProjectDescriptionProps = Omit<Project, "asset" | "date" | "description"> & {
+type ProjectCardProps = Omit<Project, "date" | "description">;
+
+export function ProjectCard({ ...project }: ProjectCardProps) {
+  const [show, setShow] = useState(false);
+
+  return (
+    <ProjectBlock
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+      asset={project.asset}>
+      <Description
+        show={show}
+        {...project}
+      />
+    </ProjectBlock>
+  );
+}
+
+type ProjectDescriptionProps = Omit<ProjectCardProps, "asset"> & {
   show: boolean;
 };
 
-export function ProjectDescription({
-  show = false,
-  name,
-  github,
-  demo,
-  technologies,
-  summary
-}: ProjectDescriptionProps) {
+function Description({ show = false, name, github, demo, technologies, summary }: ProjectDescriptionProps) {
   const showStyle = show ? "select-auto opacity-1" : "select-none opacity-0";
   return (
     <div
@@ -33,8 +46,14 @@ export function ProjectDescription({
         ))}
       </div>
       <div className="flex items-center justify-center gap-4 mt-auto">
-        <DemoButton to={demo} />
-        <GithubButton to={github} />
+        <ProjectButton
+          category="Demo"
+          to={demo}
+        />
+        <ProjectButton
+          category="Github"
+          to={github}
+        />
       </div>
     </div>
   );

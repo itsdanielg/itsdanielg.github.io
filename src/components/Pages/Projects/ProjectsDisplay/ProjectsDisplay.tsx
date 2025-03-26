@@ -1,6 +1,6 @@
 import { Project } from "@/types";
-import { ProjectBlock } from "@/components/Templates";
 import { ProjectList } from "./ProjectList";
+import { ProjectCard } from "@/components/Organisms";
 
 interface ProjectsDisplayProps {
   projects: Project[];
@@ -24,5 +24,5 @@ export function ProjectsDisplay({ projects, isGrid }: ProjectsDisplayProps) {
 }
 
 ProjectsDisplay.Child = function Child({ project, isGrid }: { project: Project; isGrid: boolean }) {
-  return isGrid ? <ProjectBlock {...project} /> : <ProjectList {...project} />;
+  return isGrid ? <ProjectCard {...project} /> : <ProjectList {...project} />;
 };
