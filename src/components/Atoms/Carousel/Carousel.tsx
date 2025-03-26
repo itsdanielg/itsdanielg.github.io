@@ -1,7 +1,7 @@
 import { ComponentType } from "react";
 import { useState, useEffect, useRef } from "react";
 
-export interface CarouselProps<T> {
+interface CarouselProps<T> {
   content: T[];
   element: ComponentType<T>;
   className?: string;
